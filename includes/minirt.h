@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:32:31 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 14:53:47 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/05 15:01:47 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct		s_sphere
 	t_point_3d		center;
 	float			diameter;
 	t_color			color;
-	t_sphere		*next;
+	void			*next;
 }					t_sphere;
 
 typedef struct		s_plane
@@ -49,7 +49,7 @@ typedef struct		s_plane
 	t_point_3d		center;
 	t_point_3d		norm_vector;
 	t_color			color;
-	t_plane			*next;
+	void			*next;
 }					t_plane;
 
 typedef struct		s_square
@@ -58,7 +58,7 @@ typedef struct		s_square
 	t_point_3d		norm_vector;
 	float			side;
 	t_color			color;
-	t_square		*next;
+	void			*next;
 }					t_square;
 
 typedef struct		s_cylinder
@@ -68,7 +68,7 @@ typedef struct		s_cylinder
 	float			diameter;
 	float			height;
 	t_color			color;
-	t_cylinder		*next;
+	void			*next;
 }					t_cylinder;
 
 typedef struct		s_triangle
@@ -77,7 +77,7 @@ typedef struct		s_triangle
 	t_point_3d		b;
 	t_point_3d		c;
 	t_color			color;
-	t_triangle		*next;
+	void			*next;
 }					t_triangle;
 
 typedef struct		s_resolution
@@ -104,7 +104,7 @@ typedef struct		s_light
 	t_point_3d		point;
 	float			ratio;
 	t_color			color;
-	t_light			*next;
+	void			*next;
 }					t_light;
 
 typedef struct		s_scene
@@ -121,3 +121,4 @@ typedef struct		s_scene
 }					t_scene;
 
 void	check_errors_with_file(int argc, char *argv[], int *fd);
+t_scene	*parser(int fd);
