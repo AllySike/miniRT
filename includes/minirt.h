@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:32:31 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 14:32:37 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/05 14:53:47 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,4 +120,4 @@ typedef struct		s_scene
 	t_plane			*planes;
 }					t_scene;
 
-void check_errors_with_file(int argc, char *argv[], int *fd);
+void	check_errors_with_file(int argc, char *argv[], int *fd);
