@@ -6,11 +6,11 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:46:23 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:10:35 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/15 14:46:43 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../includes/libft.h"
 
 t_buff	*ft_find_fd_in_lst(t_buff **lst, int fd)
 {
@@ -25,21 +25,21 @@ t_buff	*ft_find_fd_in_lst(t_buff **lst, int fd)
 			return (tmp);
 		tmp = tmp->next;
 	}
-	return (ft_lstadd_back(lst, NULL, 1, fd));
+	return (ft_lstadd_bck(lst, NULL, 1, fd));
 }
 
 int		ft_read_fd(char **dst, const int fd, t_buff *elem)
 {
 	int		result;
-	char	buff[BUFFER_SIZE + 1];
+	char	buff[2];
 	int		i;
 	int		flag;
 	char	*dest;
 
 	flag = 0;
-	while (flag != 1 && (result = read(fd, buff, BUFFER_SIZE)))
+	while (flag != 1 && (result = read(fd, buff, 1)))
 	{
-		if (result < BUFFER_SIZE)
+		if (result < 1)
 			elem->end = 1;
 		buff[result] = '\0';
 		dest = *dst;
@@ -112,9 +112,9 @@ int		get_next_line(int fd, char **line)
 	char			*tmp;
 	static t_buff	*lst;
 	t_buff			*currelem;
-	char			buff[BUFFER_SIZE + 1];
+	char			buff[2];
 
-	if (fd < 0 || !line || read(fd, buff, 0) < 0 || BUFFER_SIZE < 1
+	if (fd < 0 || !line || read(fd, buff, 0) < 0
 		|| !(currelem = ft_find_fd_in_lst(&lst, fd)))
 		return (-1);
 	tmp = currelem->content;

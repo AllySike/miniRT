@@ -6,11 +6,11 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:47:19 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:11:08 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/15 14:46:17 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../includes/libft.h"
 
 int		ft_strlen(const char *str)
 {
@@ -68,7 +68,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (output);
 }
 
-t_buff	*ft_lstnew(char *content, t_buff *elem, int len, int fd)
+t_buff	*ft_lstnw(char *content, t_buff *elem, int len, int fd)
 {
 	if (!content)
 	{
@@ -81,14 +81,14 @@ t_buff	*ft_lstnew(char *content, t_buff *elem, int len, int fd)
 	return (elem);
 }
 
-t_buff	*ft_lstadd_back(t_buff **lst, char *content, int len, int fd)
+t_buff	*ft_lstadd_bck(t_buff **lst, char *content, int len, int fd)
 {
 	void	*f;
 	t_buff	*elem;
 
 	if ((elem = (t_buff *)malloc(sizeof(t_buff))))
 	{
-		ft_lstnew(content, elem, len, fd)->next = NULL;
+		(ft_lstnw(content, elem, len, fd))->next = NULL;
 		if (lst && elem)
 		{
 			if (elem && *lst)

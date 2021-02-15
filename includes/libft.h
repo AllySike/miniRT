@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgale <kgale@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:29:20 by kgale             #+#    #+#             */
-/*   Updated: 2020/11/05 12:18:08 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/15 14:47:04 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,32 @@
 
 # include <stdlib.h>
 # include <string.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_buff
+{
+	char			*content;
+	int				fd;
+	struct s_buff	*next;
+	int				end;
+}					t_buff;
+
+int					get_next_line(const int fd, char **line);
+char				*ft_strjoin(char const *s1, char const *s2);
+t_buff				*ft_lstadd_bck(t_buff **lst,
+					char *content, int len, int fd);
+int					ft_strlen(const char *str);
+void				ft_strlcpy(char **dst, const char *src, int siz, int index);
 int					ft_strlen(const char *str);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -40,7 +60,6 @@ char				*ft_strcpy(char *dest, const char *src);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-size_t				ft_strlcpy (char *dst, const char *src, size_t siz);
 size_t				ft_strlcat(char *dst, const char *src, size_t siz);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
@@ -60,8 +79,6 @@ char				*ft_strdup(const char *s1);
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);
 int					ft_lstsize(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));

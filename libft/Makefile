@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kgale <kgale@student.42.fr>                +#+  +:+       +#+         #
+#    By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 09:31:56 by kgale             #+#    #+#              #
-#    Updated: 2020/11/05 13:19:48 by kgale            ###   ########.fr        #
+#    Updated: 2021/02/15 14:48:41 by kgale            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ SRCS =		$(SRCS_DIR)/ft_atoi.c	\
 			$(SRCS_DIR)/ft_strdup.c	\
 			$(SRCS_DIR)/ft_strjoin.c	\
 			$(SRCS_DIR)/ft_strlcat.c	\
-			$(SRCS_DIR)/ft_strlcpy.c	\
 			$(SRCS_DIR)/ft_strlen.c	\
 			$(SRCS_DIR)/ft_strmapi.c	\
 			$(SRCS_DIR)/ft_strncmp.c	\
@@ -49,7 +48,9 @@ SRCS =		$(SRCS_DIR)/ft_atoi.c	\
 			$(SRCS_DIR)/ft_strtrim.c	\
 			$(SRCS_DIR)/ft_substr.c	\
 			$(SRCS_DIR)/ft_tolower.c	\
-			$(SRCS_DIR)/ft_toupper.c
+			$(SRCS_DIR)/ft_toupper.c	\
+			$(SRCS_DIR)/get_next_line.c \
+			$(SRCS_DIR)/get_next_line_utils.c
 
 OBJS =		$(SRCS:.c=.o)
 
@@ -57,7 +58,6 @@ SRCS_BON =	$(SRCS_DIR)/ft_lstnew.c\
 			$(SRCS_DIR)/ft_lstadd_front.c\
 			$(SRCS_DIR)/ft_lstlast.c\
 			$(SRCS_DIR)/ft_lstsize.c\
-			$(SRCS_DIR)/ft_lstadd_back.c\
 			$(SRCS_DIR)/ft_lstdelone.c\
 			$(SRCS_DIR)/ft_lstclear.c\
 			$(SRCS_DIR)/ft_lstiter.c\

@@ -6,11 +6,11 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:32:43 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:01:01 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/15 14:40:25 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minirt.h"
+#include "../includes/cub3d.h"
 
 void	check_errors_with_file(int argc, char *argv[], int *fd)
 {
@@ -29,7 +29,8 @@ void	check_errors_with_file(int argc, char *argv[], int *fd)
 		write(STDERR_FILENO, "Error\nExtension needed\n", 23);
 		exit(-1);
 	}
-	else if (i < 3 || argv[1][i] != '.' || !argv[1][i + 1] || argv[1][i + 1] != 'r' || !argv[1][i + 2] || argv[1][i + 2] != 't' || argv[1][i + 3])
+	else if (i < 3 || argv[1][i] != '.' || !argv[1][i + 1] || argv[1][i + 1] != 'c' || !argv[1][i + 2]
+	|| argv[1][i + 2] != 'u' || !argv[1][i + 3] || argv[1][i + 3] != 'b' || argv[1][i + 4])
 	{
 		write(STDERR_FILENO, "Error\nInvalid extension\n", 24);
 		exit(-1);
