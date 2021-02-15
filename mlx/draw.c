@@ -34,6 +34,7 @@ typedef struct  s_vars {
 int             key_hook(int keycode, t_vars *vars)
 {
     printf("Hello from key_hook!\n");
+    return (0);
 }
 
 int             main(void)
@@ -46,7 +47,11 @@ int             main(void)
     vars.win = mlx_new_window(vars.mlx, 650, 400, "Hello world!");
     mlx_key_hook(vars.win, key_hook, &vars);
     mlx_loop(vars.mlx);
-    while (x < 320)
-        while (y < 400)
+    while (x++ < 320)
+    {
+        y = 0;
+        while (y++ < 400)
             mlx_pixel_put(vars.mlx, vars.win, x, y, create_trgb(2, 100, 255, 200));
+    }
+    return (0);
 } 
