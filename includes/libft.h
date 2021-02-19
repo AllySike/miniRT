@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:29:20 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/15 14:47:04 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/19 13:35:26 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+void				ft_lstadd_back(t_list **lst, t_list *new);
 #endif

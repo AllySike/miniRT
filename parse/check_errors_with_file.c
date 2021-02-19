@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:32:43 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/15 14:40:25 by kgale            ###   ########.fr       */
+/*   Updated: 2021/02/19 13:49:31 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	check_errors_with_file(int argc, char *argv[], int *fd)
 {
 	int	i;
-
 	if (argc < 2 || argc > 3)
 	{
 		write(STDERR_FILENO, "Error\nWrong number of arguments\n", 33);

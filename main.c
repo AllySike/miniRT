@@ -12,17 +12,20 @@
 /* ************************************************************************** */
 
 #include "includes/cub3d.h"
-
+int             draw(int fd);
 int	main(int argc, char *argv[])
 {
 	int		fd;
 	t_scene	*scene;
+	int gnl;
+	char line[6];
 
 	check_errors_with_file(argc, argv, &fd);
-	fd = open(argv[1], O_RDONLY);
-	scene = parser(fd);
+	parser(fd);
 	//дальнейшая обработка спарсенной сцены - тут будет вызываться функция из блока рендер
+	//draw(fd);
 	close(fd);
 	return (0);
 }
-// gcc libmlx.dylib -framework Metal -framework AppKit *.c && ./a.out
+// cp MiniLibX/libmlx.dylib .
+// gcc libmlx.dylib -framework Metal -framework AppKit main.c parse/* mlx/* && ./a.out examples/gay.cub

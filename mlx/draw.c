@@ -37,7 +37,7 @@ int             key_hook(int keycode, t_vars *vars)
     return (0);
 }
 
-int             main(void)
+int             draw(void)
 {
     t_vars      vars;
     int y = 0;
