@@ -28,4 +28,4 @@ int	main(int argc, char *argv[])
 	return (0);
 }
 // cp MiniLibX/libmlx.dylib .
-// gcc libmlx.dylib -framework Metal -framework AppKit main.c parse/* mlx/* && ./a.out examples/gay.cub
+// gcc libmlx.dylib -framework Metal -framework AppKit main.c parse/* mlx/* libft/libft.a && ./a.out examples/gay.cub
