@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 14:26:43 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/20 15:38:04 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/20 17:39:36 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,5 @@ typedef struct		s_scene
 void	check_errors_with_file(int argc, char *argv[], int *fd);
 void	handle_res_tex_col(char *line, t_scene *scene);
 void	handle_texture(char *line, t_scene *scene);
-void	handle_map(char *line, t_scene *scene);
+void	handle_map(char *line, t_scene *scene, int fd);
 t_scene	*parser(int fd);

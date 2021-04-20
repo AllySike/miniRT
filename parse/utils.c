@@ -24,7 +24,15 @@ void	handle_texture(char *line, t_scene *scene)
 		printf("East:\t%s\n", line);
 }
 
-void handle_map(char *line, t_scene *scene)
+void handle_map(char *line, t_scene *scene, int fd)
 {
+	int rd;
+
 	printf("Map:\t%s\n", line);
+	rd = get_next_line(fd, &line);
+	while (rd && *line)
+	{
+		printf("Map:\t%s\n", line);
+		rd = get_next_line(fd, &line);
+	}
 }

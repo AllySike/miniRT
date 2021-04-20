@@ -107,6 +107,7 @@ int ft_hook(int keycode, t_vars *vars)
     {
         ft_close(vars);
     }
+    printf("h");
     return (0);
 }
 
@@ -115,12 +116,10 @@ int             draw(void)
     t_vars    vars;
 
     vars.mlx = mlx_init();
-    vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+    vars.win = mlx_new_window(vars.mlx, 1920, 1080, "cub3d");
     mlx_loop_hook(vars.mlx, win, &vars);
-    //mlx_hook(vars.win, 2, 1L << 0, win_close, &vars);
 	mlx_hook(vars.win, 17, 0, ft_close, &vars);
 	mlx_hook(vars.win, 2, 1L << 0, ft_hook, &vars);
     mlx_loop(vars.mlx);
-    //printf("imhere");
     return (0);
 } 
