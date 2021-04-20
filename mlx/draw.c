@@ -85,13 +85,28 @@ int             key_hook(int keycode, t_vars *vars)
 //     mlx_loop(vars.mlx);
 //     return (0);
 // } 
-int             win_close(int keycode, t_vars *vars)
+int             win(t_vars *vars)
 {
-    if (keycode == 53 || keycode == 1L<<5)
-	{
-    	mlx_destroy_window(vars->mlx, vars->win);
-    	//printf("imhere");
-	}
+    return (0);
+}
+
+int ft_close(t_vars *vars)
+{
+    // if (keycode == 53 || keycode == 1L<<5 || keycode == 17)
+	// {
+    // 	mlx_destroy_window(vars->mlx, vars->win);
+    // 	//printf("imhere");
+    //     exit(0);
+	// }
+    exit (0);
+}
+
+int ft_hook(int keycode, t_vars *vars)
+{
+    if (keycode == 53)
+    {
+        ft_close(vars);
+    }
     return (0);
 }
 
@@ -101,7 +116,10 @@ int             draw(void)
 
     vars.mlx = mlx_init();
     vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-    mlx_loop_hook(vars.mlx, win_close, &vars);
+    mlx_loop_hook(vars.mlx, win, &vars);
+    //mlx_hook(vars.win, 2, 1L << 0, win_close, &vars);
+	mlx_hook(vars.win, 17, 0, ft_close, &vars);
+	mlx_hook(vars.win, 2, 1L << 0, ft_hook, &vars);
     mlx_loop(vars.mlx);
     //printf("imhere");
     return (0);
