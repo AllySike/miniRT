@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 11:51:23 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:11:53 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 14:44:41 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char *output;
+	char	*output;
 
 	if (count == 0 || size == 0)
 	{

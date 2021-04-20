@@ -6,11 +6,18 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 21:00:41 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:12:45 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 15:22:59 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
+static void	ft_helper(t_list *lst, void (*del)(void *),
+t_list	*new_lst)
+{
+	ft_lstclear(&lst, del);
+	ft_lstclear(&new_lst, del);
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
 void (*del)(void *))
@@ -20,7 +27,8 @@ void (*del)(void *))
 
 	if (!lst || !f)
 		return (NULL);
-	if (!(new_elem = ft_lstnew(f(lst->content))))
+	new_elem = ft_lstnew(f(lst->content));
+	if (!new_elem)
 	{
 		ft_lstclear(&lst, del);
 		return (NULL);
@@ -29,10 +37,10 @@ void (*del)(void *))
 	lst = lst->next;
 	while (lst)
 	{
-		if (!(new_elem = ft_lstnew(f(lst->content))))
+		new_elem = ft_lstnew(f(lst->content));
+		if (!new_elem)
 		{
-			ft_lstclear(&lst, del);
-			ft_lstclear(&new_lst, del);
+			ft_helper(lst, del, new_lst);
 			break ;
 		}
 		lst = lst->next;

@@ -5,34 +5,40 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/02/05 15:20:12 by kgale             #+#    #+#              #
-#    Updated: 2021/02/19 13:44:49 by kgale            ###   ########.fr        #
+#    Created: 2021/01/15 01:41:01 by dwanetta          #+#    #+#              #
+#    Updated: 2021/04/20 15:45:26 by kgale            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = miniRT
+NAME = cub3D
 CC = gcc
-FLAGS = -Wall -Werror -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit -L libft -lft
-LIBFT = libft
-SRCS =		main.c	\
-			parse/parser.c	\
-			parse/check_errors_with_file.c
+FLAGS = #-Wall #-Wextra #-Werror
+LIB = -L mlx_mac  -L libft
+OPTION_LIB = -lmlx -framework OpenGL -framework AppKit -lft
+OPTION = -c
+LIBFT = make -C libft
+SRCS =	main.c\
+		mlx/draw.c\
+		parse/check_errors_with_file.c\
+		parse/parser.c\
+		parse/utils.c
 
-all:		$(NAME)
+OBJS_SRCS = ${SRCS:.c=.o}
 
-libft:		
-			@make -C $(LIBFT)
+all: $(NAME)
 
-$(NAME):	libft
-			@make -s -C libft
-			#$(CC) $(FLAGS) $(OPTION) $(SRCS)
-			#ar rcs $(NAME) $(OBJS)
-			#ranlib $(NAME)
-
+$(NAME) : $(OBJS_SRCS)
+		@$(CC) $(FLAGS) $(OPTION) $(SRCS)
+		@$(LIBFT)
+		@$(CC) $(LIB) $(OPTION_LIB) $(OBJS_SRCS) -o $(NAME)
+		@#cp MiniLibX/libmlx.dylib .
+		@#gcc libmlx.dylib -framework Metal -framework AppKit main.c parse/* mlx/* libft/libft.a
 clean:
-
-fclean:		clean
-
-re:			fclean all
-
-.PHONY:	all clean fclean re
+		rm -f $(OBJS_SRCS)
+		@$(LIBFT) clean
+fclean: clean
+		rm -f $(NAME)
+		rm -f *.bmp
+		@$(LIBFT) fclean
+re: fclean all
+.PHONY: all clean fclean re

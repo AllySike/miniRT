@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 17:30:34 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:13:16 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 14:54:10 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	ft_endcount(char const *s1, char const *set)
 	return (length);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*output;
 	int		a;

@@ -6,13 +6,13 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:47:19 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/15 14:46:17 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 15:52:01 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		ft_strlen(const char *str)
+int	my_strlen(const char *str)
 {
 	int	count;
 
@@ -51,10 +51,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		index;
 	char	*output;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
+	len1 = my_strlen(s1);
+	len2 = my_strlen(s2);
 	index = 0;
-	if (!(output = (char *)malloc(sizeof(char) * (len1 + len2 + 1))))
+	output = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!output)
 		return (NULL);
 	while (index++ < len1)
 		output[index - 1] = s1[index - 1];
@@ -86,7 +87,8 @@ t_buff	*ft_lstadd_bck(t_buff **lst, char *content, int len, int fd)
 	void	*f;
 	t_buff	*elem;
 
-	if ((elem = (t_buff *)malloc(sizeof(t_buff))))
+	elem = (t_buff *)malloc(sizeof(t_buff));
+	if (elem)
 	{
 		(ft_lstnw(content, elem, len, fd))->next = NULL;
 		if (lst && elem)

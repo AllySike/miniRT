@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 14:32:31 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/19 17:43:13 by kgale            ###   ########.fr       */
+/*   Created: 2021/04/19 14:26:43 by kgale             #+#    #+#             */
+/*   Updated: 2021/04/20 15:38:04 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #include <mlx.h>
 #include "libft.h"
 
-/*identifier == 0 stands for ceiling*/
-/*identifier == 1 stands for floor*/
+/*identifier == 0 stands for ceiling
+identifier == 1 stands for floor*/
 typedef struct		s_color
 {
 	int				identifier;

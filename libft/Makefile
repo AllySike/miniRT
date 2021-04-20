@@ -6,7 +6,7 @@
 #    By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 09:31:56 by kgale             #+#    #+#              #
-#    Updated: 2021/02/15 14:48:41 by kgale            ###   ########.fr        #
+#    Updated: 2021/04/19 15:56:28 by kgale            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ SRCS =		$(SRCS_DIR)/ft_atoi.c	\
 			$(SRCS_DIR)/ft_tolower.c	\
 			$(SRCS_DIR)/ft_toupper.c	\
 			$(SRCS_DIR)/get_next_line.c \
-			$(SRCS_DIR)/get_next_line_utils.c
+			$(SRCS_DIR)/get_next_line_utils.c\
+			$(SRCS_DIR)/get_next_line_helpers.c
 
 OBJS =		$(SRCS:.c=.o)
 

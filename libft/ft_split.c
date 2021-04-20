@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 17:23:39 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:13:47 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 15:22:02 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,14 @@ static int	f(int index, char const *s, char c)
 	return (length);
 }
 
-char		**ft_split(char const *s, char c)
+static int	define(int *in, char const *s, char c, int *words)
+{
+	*in = 0;
+	*words = ft_count_words(s, c);
+	return (0);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**o;
 	int		in;
@@ -72,15 +79,15 @@ char		**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	in = 0;
-	i = 0;
-	words = ft_count_words(s, c);
-	if ((o = (char **)malloc(sizeof(char*) * (words + 1))) == NULL)
+	i = define(&in, s, c, &words);
+	o = (char **)malloc(sizeof(char *) * (words + 1));
+	if (o == NULL)
 		return (NULL);
 	while (s[in] != '\0' && i < words && o != NULL)
 	{
 		in = ft_find_word_start(in, s, c);
-		if ((o[i] = (char *)malloc(sizeof(char) * (f(in, s, c) + 1))) == NULL)
+		o[i] = (char *)malloc(sizeof(char) * (f(in, s, c) + 1));
+		if (o[i] == NULL)
 			return (NULL);
 		j = 0;
 		while (s[in] != c && s[in] != '\0')

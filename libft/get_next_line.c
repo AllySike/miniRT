@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:46:23 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/15 14:46:43 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 16:47:25 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,36 +28,35 @@ t_buff	*ft_find_fd_in_lst(t_buff **lst, int fd)
 	return (ft_lstadd_bck(lst, NULL, 1, fd));
 }
 
-int		ft_read_fd(char **dst, const int fd, t_buff *elem)
+int	ft_read_fd(char **dst, const int fd, t_buff *elem)
 {
 	int		result;
 	char	buff[2];
-	int		i;
 	int		flag;
 	char	*dest;
 
-	flag = 0;
-	while (flag != 1 && (result = read(fd, buff, 1)))
+	result = ft_init(&flag, fd, buff);
+	while (flag != 1 && result)
 	{
 		if (result < 1)
 			elem->end = 1;
 		buff[result] = '\0';
 		dest = *dst;
-		if (!(*dst = ft_strjoin(*dst, buff)))
+		*dst = ft_strjoin(*dst, buff);
+		if (!*dst)
 			return (-1);
-		free(dest);
-		i = 0;
-		flag = 0;
-		while (buff[i])
-			if (buff[i] == '\0' || buff[i++] == '\n')
-				flag = 1;
+		ft_empty(&flag, &dest);
+		if (buff[0] == '\0')
+			flag = 1;
+		if (flag != 1)
+			result = read(fd, buff, 1);
 	}
 	if (result == 0 && flag == 0)
 		elem->end = 1;
 	return (result);
 }
 
-int		ft_write_in_line(char **line, char *content)
+int	ft_write_in_line(char **line, char *content)
 {
 	int	i;
 	int	index;
@@ -65,7 +64,8 @@ int		ft_write_in_line(char **line, char *content)
 	i = 0;
 	while (content && content[i] && content[i] != '\0' && content[i] != '\n')
 		i++;
-	if (!(*line = (char *)malloc(sizeof(char) * (i + 1))))
+	*line = (char *)malloc(sizeof(char) * (i + 1));
+	if (!*line)
 		return (0);
 	index = 0;
 	while (content && content[index] && index < i)
@@ -77,10 +77,9 @@ int		ft_write_in_line(char **line, char *content)
 	return (i);
 }
 
-int		ft_find_end_line_in_buff(char *str, t_buff **lst, int fd)
+int	ft_find_end_line_in_buff(char *str, t_buff **lst, int fd)
 {
 	t_buff	*curr;
-	t_buff	*next;
 
 	if (!str)
 		return (0);
@@ -88,25 +87,13 @@ int		ft_find_end_line_in_buff(char *str, t_buff **lst, int fd)
 		if (*str == '\0' || *str++ == '\n')
 			return (0);
 	curr = *lst;
-	if (curr->fd == fd)
-		*lst = curr->next;
-	else
-		while (curr && (next = curr->next))
-		{
-			if (next->fd == fd)
-			{
-				curr->next = next->next;
-				curr = next;
-				break ;
-			}
-			curr = curr->next;
-		}
+	find_curr(curr, fd, lst);
 	free(curr->content);
 	free(curr);
 	return (1);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	int				res;
 	char			*tmp;
@@ -118,19 +105,17 @@ int		get_next_line(int fd, char **line)
 		|| !(currelem = ft_find_fd_in_lst(&lst, fd)))
 		return (-1);
 	tmp = currelem->content;
-	if (!(res = ft_read_fd(&tmp, fd, currelem)) && (!tmp || (tmp && !*tmp)))
-	{
-		ft_write_in_line(line, currelem->content);
-		ft_find_end_line_in_buff(currelem->content, &lst, fd);
-		return (0);
-	}
+	res = ft_read_fd(&tmp, fd, currelem);
+	if (!res && (!tmp || (tmp && !*tmp)))
+		return (ft_ret(&line, &currelem, fd, &lst));
 	currelem->content = tmp;
-	if ((res = ft_write_in_line(line, tmp)) == -1)
+	res = ft_write_in_line(line, tmp);
+	if (res == -1)
 		return (-1);
 	if (currelem->end && ft_find_end_line_in_buff(tmp, &lst, fd))
 		return (0);
 	else
 		fd = 1;
-	ft_strlcpy(&(tmp), &(tmp[res + 1]), ft_strlen(tmp) - res, 0);
+	ft_strlcpy(&(tmp), &(tmp[res + 1]), my_strlen(tmp) - res, 0);
 	return (fd);
 }

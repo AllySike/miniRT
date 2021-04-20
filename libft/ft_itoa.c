@@ -6,14 +6,14 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 19:51:56 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:12:25 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 14:45:17 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include <stdio.h>
 
-static int		ft_count_range(int n)
+static int	ft_count_range(int n)
 {
 	int		range;
 	int		nbr;
@@ -42,7 +42,7 @@ static long int	ft_count_nbr(int n)
 	return (nbr);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char		*output;
 	long int	nmbr;

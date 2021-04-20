@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:01:35 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:12:49 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 14:56:50 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*elem;
 
-	elem = (t_list*)malloc(sizeof(t_list));
+	elem = (t_list *)malloc(sizeof(t_list));
 	if (elem == NULL)
 		return (NULL);
 	(*elem).content = content;

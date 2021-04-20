@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 14:32:13 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:13:50 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/19 14:57:36 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,5 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	if (s != NULL && fd != -1)
 		while (s[i])
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
+			ft_putchar_fd(s[i++], fd);
 }
