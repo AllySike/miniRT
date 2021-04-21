@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:30:23 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 16:27:19 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/21 19:34:30 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	main(int argc, char *argv[])
 	int		gnl;
 	char	line[6];
 
-	check_errors_with_file(argc, argv, fd);
+	check_errors_with_file(argc, argv, &fd);
 	parser(fd);
 // /* дальнейшая обработка спарсенной сцены -
 // тут будет вызываться функция из блока рендер*/
-	//draw(fd);
-	// close(fd);
+	ft_draw();
+	close(fd);
 	return (0);
 }
 // /*	cp MiniLibX/libmlx.dylib .

@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:32:43 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 16:20:12 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/21 19:59:20 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,47 @@ static void	check_errors_with_extentions(char *argv[], int fd)
 	}
 }
 
-void	check_errors_with_file(int argc, char *argv[], int fd)
+void	check_errors_with_file(int argc, char *argv[], int *fd)
 {
 	if (argc < 2 || argc > 3)
 	{
 		write(STDERR_FILENO, "Error\nWrong number of arguments\n", 33);
 		exit(-1);
 	}
-	check_errors_with_extentions(argv, fd);
-	fd = open(argv[1], O_RDONLY);
-	if (fd <= 0)
+	check_errors_with_extentions(argv, *fd);
+	*fd = open(argv[1], O_RDONLY);
+	if (*fd <= 0)
 	{
 		write(STDERR_FILENO, "Error\nNo such file or directory\n", 32);
 		exit(-1);
 	}
 }
 
-void	ft_exit(int fd)
+void	free_split(char **split)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+void	ft_exit(int fd, char **split)
 {
 	write(STDERR_FILENO, "Error\nWrong info format in the map\n", 35);
+	free_split(split);
 	close(fd);
 	exit(-1);
+}
+
+int	ft_check_path_to_texture(char *path)
+{
+	if (!path[0])
+		return (0);
+	return (1);
 }

@@ -1,24 +1,5 @@
 #include "../includes/cub3d.h"
 #include <math.h>
-int get_t(int trgb)
-{
-    return (trgb & (0xFF << 24));
-}
-
-int get_r(int trgb)
-{
-    return (trgb & (0xFF << 16));
-}
-
-int get_g(int trgb)
-{
-    return (trgb & (0xFF << 8));
-}
-
-int get_b(int trgb)
-{
-    return (trgb & 0xFF);
-}
 
 int create_trgb(int t, int r, int g, int b)
 {
@@ -113,7 +94,7 @@ int win(t_vars *vars)
                     k = x;
                     while (k < x + 70)
                     {
-                        mlx_pixel_put(vars->mlx, vars->win, k, d, 0xE2D7FF10);
+                        mlx_pixel_put(vars->mlx, vars->win, k, d, 14443520);
                         k++;
                     }
                     d++;
@@ -150,7 +131,7 @@ int ft_hook(int keycode, t_vars *vars)
     return (0);
 }
 
-int draw(void)
+int ft_draw(void)
 {
     t_vars vars;
 
