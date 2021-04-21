@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 14:26:43 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/20 17:39:36 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/21 16:26:44 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ typedef struct		s_elem
 
 typedef struct		s_map
 {
-	t_elem			*walls;
-	t_elem			*items;
-	t_elem			*empty;
+	t_elem			walls;
+	t_elem			items;
+	t_elem			empty;
 }					t_map;
-
+/*сверху две структуры хуета*/
 
 typedef struct		s_scene
 {
@@ -75,11 +75,12 @@ typedef struct		s_scene
 	t_texture		west;
 	t_texture		east;
 	t_texture		sprite;
-	t_map			*map;
+	char			**map;
 }					t_scene;
 
-void	check_errors_with_file(int argc, char *argv[], int *fd);
-void	handle_res_tex_col(char *line, t_scene *scene);
-void	handle_texture(char *line, t_scene *scene);
+void	check_errors_with_file(int argc, char *argv[], int fd);
+void	handle_res_tex_col(char *line, t_scene *scene, int fd);
+void	handle_texture(char *line, t_scene *scene, int fd);
 void	handle_map(char *line, t_scene *scene, int fd);
+void	ft_exit(int fd);
 t_scene	*parser(int fd);

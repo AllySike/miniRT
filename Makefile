@@ -6,7 +6,7 @@
 #    By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/15 01:41:01 by dwanetta          #+#    #+#              #
-#    Updated: 2021/04/20 15:45:26 by kgale            ###   ########.fr        #
+#    Updated: 2021/04/20 19:40:55 by kgale            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,6 @@ $(NAME) : $(OBJS_SRCS)
 		@$(CC) $(FLAGS) $(OPTION) $(SRCS)
 		@$(LIBFT)
 		@$(CC) $(LIB) $(OPTION_LIB) $(OBJS_SRCS) -o $(NAME)
-		@#cp MiniLibX/libmlx.dylib .
-		@#gcc libmlx.dylib -framework Metal -framework AppKit main.c parse/* mlx/* libft/libft.a
 clean:
 		rm -f $(OBJS_SRCS)
 		@$(LIBFT) clean
