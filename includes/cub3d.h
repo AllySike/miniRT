@@ -5,68 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 14:26:43 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 19:47:26 by kgale            ###   ########.fr       */
+/*   Created: 2021/04/21 20:16:26 by kgale             #+#    #+#             */
+/*   Updated: 2021/04/21 20:17:42 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <math.h>
-#include <mlx.h>
-#include "libft.h"
+#ifndef CUB3D_H
+# define CUB3D_H
 
-/*identifier == 0 stands for ceiling
-identifier == 1 stands for floor*/
-typedef struct		s_color
-{
-	int				identifier;
-	int				r;
-	int				g;
-	int				b;
-}					t_color;
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <math.h>
+# include <mlx.h>
+# include "libft.h"
 
-
-// /*identifier == 0 stands for NO*/
-// /*identifier == 1 stands for SO*/
-// /*identifier == 2 stands for WE*/
-// /*identifier == 3 stands for EA*/
-// /*identifier == 4 stands for S*/
-// typedef struct		s_texture
-// {
-// 	int				identifier;
-// 	char			*path;
-// }					t_texture;
-
-typedef struct		s_resolution
+typedef struct s_resolution
 {
 	int				x;
 	int				y;
 }					t_resolution;
 
-// /*identifier == 1 stands for SO*/
-// /*identifier == 2 stands for WE*/
-// /*identifier == 3 stands for EA*/
-// /*identifier == 4 stands for S*/
-// typedef struct		s_elem
-// {
-// 	int				x;
-// 	int				y;
-// 	int				identifier;
-// 	void			*next;
-// }					t_elem;
-
-
-// typedef struct		s_map
-// {
-// 	t_elem			walls;
-// 	t_elem			items;
-// 	t_elem			empty;
-// }					t_map;
-// /*сверху две структуры хуета*/
-
-typedef struct		s_scene
+typedef struct s_scene
 {
 	t_resolution	*resolution;
 	int				floor;
@@ -89,3 +49,4 @@ void	free_split(char **split);
 int		create_trgb(int t, int r, int g, int b);
 int		ft_draw(void);
 t_scene	*parser(int fd);
+#endif

@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 11:37:13 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 17:02:15 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/21 20:14:23 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_aredigits(char *s)
 	int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:29:20 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 17:02:25 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/21 20:11:14 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ typedef struct s_buff
 
 int					ft_write_in_line(char **line, char *content);
 int					ft_find_end_line_in_buff(char *str, t_buff **lst, int fd);
-int					ft_ret(char ***line, t_buff **currelem, int fd, t_buff **lst);
-void				find_curr(t_buff	*curr, int fd, t_buff **lst);
-int 				ft_init(int *flag, int fd, char buff[2]);
+int					ft_ret(char ***line, t_buff **currelem,
+						int fd, t_buff **lst);
+void				find_curr(t_buff *curr, int fd, t_buff **lst);
+int					ft_init(int *flag, int fd, char buff[2]);
 void				ft_empty(int *flag, char **dest);
 int					my_strlen(const char *str);
 int					get_next_line(const int fd, char **line);

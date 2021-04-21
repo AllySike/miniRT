@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:46:23 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/19 16:47:25 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/21 20:14:04 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,9 @@ int	get_next_line(int fd, char **line)
 	t_buff			*currelem;
 	char			buff[2];
 
+	currelem = ft_find_fd_in_lst(&lst, fd);
 	if (fd < 0 || !line || read(fd, buff, 0) < 0
-		|| !(currelem = ft_find_fd_in_lst(&lst, fd)))
+		|| !currelem)
 		return (-1);
 	tmp = currelem->content;
 	res = ft_read_fd(&tmp, fd, currelem);
