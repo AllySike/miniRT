@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:46:23 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 20:14:04 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/22 17:53:10 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ int	ft_write_in_line(char **line, char *content)
 	index = 0;
 	while (content && content[index] && index < i)
 	{
-		line[0][index] = content[index];
+		(*line)[index] = content[index];
 		index++;
 	}
-	line[0][index] = '\0';
+	(*line)[index] = '\0';
 	return (i);
 }
 

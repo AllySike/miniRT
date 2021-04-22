@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:32:43 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 19:59:20 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/22 18:01:07 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,24 @@ void	ft_exit(int fd, char **split)
 {
 	write(STDERR_FILENO, "Error\nWrong info format in the map\n", 35);
 	free_split(split);
-	close(fd);
+	if (fd > 0)
+		close(fd);
 	exit(-1);
 }
 
-int	ft_check_path_to_texture(char *path)
+int	ft_check_path_to_texture(char *path, char **split)
 {
+	int		fd;
+	char	buff[1];
+
 	if (!path[0])
 		return (0);
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		ft_exit(fd, split);
+	fd = read(fd, buff, 0);
+	if (fd < 0)
+		ft_exit(fd, split);
+	close(fd);
 	return (1);
 }

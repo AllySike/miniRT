@@ -6,7 +6,7 @@
 #    By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/15 01:41:01 by dwanetta          #+#    #+#              #
-#    Updated: 2021/04/20 19:40:55 by kgale            ###   ########.fr        #
+#    Updated: 2021/04/22 18:55:50 by kgale            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS =	main.c\
 		mlx/draw.c\
 		parse/check_errors_with_file.c\
 		parse/parser.c\
-		parse/utils.c
+		parse/utils.c\
+		parse/map_utils.c
 
 OBJS_SRCS = ${SRCS:.c=.o}
 

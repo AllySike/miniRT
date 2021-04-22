@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:30:23 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 20:23:49 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/22 20:15:41 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,24 @@ int	main(int argc, char *argv[])
 	char	line[6];
 
 	check_errors_with_file(argc, argv, &fd);
-	parser(fd);
+	scene = parser(fd);
+	printf("Resolution: %i %i\n", scene->resolution->x, scene->resolution->y);
+	printf("Sprite: %s\n", scene->sprite_path);
+	printf("North:\t%s\n", scene->north_path);
+	printf("South:\t%s\n", scene->south_path);
+	printf("West:\t%s\n", scene->west_path);
+	printf("East:\t%s\n", scene->east_path);
+	printf("Floor:\t\t%i\n", scene->floor);
+	printf("Ceiling:\t%i\n", scene->ceiling);
 // /* дальнейшая обработка спарсенной сцены -
 // тут будет вызываться функция из блока рендер*/
-	ft_draw();
+/*t_map *list = scene->map;
+	while (list)
+	{
+		printf("Map:\t%s\n", list->line);
+		list = list->next;
+	}*/
+	ft_draw(scene);
 	close(fd);
 	return (0);
 }

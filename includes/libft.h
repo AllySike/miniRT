@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:29:20 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/21 20:11:14 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/22 16:25:32 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,5 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 void				ft_lstadd_back(t_list **lst, t_list *new);
 int					ft_aredigits(char *s);
+char				**my_split(char const *s);
 #endif
