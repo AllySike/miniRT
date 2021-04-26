@@ -1,19 +1,18 @@
-R 1920 1080
-NO ./textures/bluestone .xpm
-SO ./textures/eagle.xpm
+R 1924 1080
+
+NO /Users/kgale/CLionProjects/untitled1/textures/bluestone .xpm
+SO /Users/kgale/CLionProjects/untitled1/textures/eagle.xpm
 
 
-EA           ./textures/wood.xpm
+EA /Users/kgale/CLionProjects/untitled1/textures/wood.xpm
 
-S ./textures/pillar.xpm
-
-
+S             /Users/kgale/CLionProjects/untitled1/textures/pillar.xpm
 
 
 
 
 F 255,255,255
-WE              ./textures/redbrick.xpm
+WE /Users/kgale/CLionProjects/untitled1/textures/redbrick.xpm
 C 101,67,33
 
       11111111111
@@ -46,7 +45,6 @@ C 101,67,33
 1000000000000000000000000111111111111111111111111111111111111110000000000001               2
 1000000000000000000000001                                      100000000001
 100000000000000000000001                                        1111111111           2     2
-100000000000000000000001
 100000000000000000000001
 100000000000000000000001                                                             2     2
 100000000000000000000001

@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 13:25:52 by kgale             #+#    #+#             */
-/*   Updated: 2021/02/05 15:13:45 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/26 13:36:30 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,33 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == c)
 		return ((char *)&s[i]);
 	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**o;
+	int		in;
+	int		i;
+	int		words;
+	int		j;
+
+	if (s == NULL)
+		return (NULL);
+	i = define(&in, s, c, &words);
+	o = (char **)malloc(sizeof(char *) * (words + 1));
+	if (o == NULL)
+		return (NULL);
+	while (s[in] != '\0' && i < words && o != NULL)
+	{
+		in = ft_find_word_start(in, s, c);
+		o[i] = (char *)malloc(sizeof(char) * (f(in, s, c) + 1));
+		if (o[i] == NULL)
+			return (NULL);
+		j = 0;
+		while (s[in] != c && s[in] != '\0')
+			o[i][j++] = s[in++];
+		o[i++][j] = '\0';
+	}
+	o[i] = NULL;
+	return (o);
 }

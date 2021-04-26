@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 17:23:39 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/22 16:51:39 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/26 13:36:23 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,35 +67,6 @@ static int	define(int *in, char const *s, char c, int *words)
 	*in = 0;
 	*words = ft_count_words(s, c);
 	return (0);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**o;
-	int		in;
-	int		i;
-	int		words;
-	int		j;
-
-	if (s == NULL)
-		return (NULL);
-	i = define(&in, s, c, &words);
-	o = (char **)malloc(sizeof(char *) * (words + 1));
-	if (o == NULL)
-		return (NULL);
-	while (s[in] != '\0' && i < words && o != NULL)
-	{
-		in = ft_find_word_start(in, s, c);
-		o[i] = (char *)malloc(sizeof(char) * (f(in, s, c) + 1));
-		if (o[i] == NULL)
-			return (NULL);
-		j = 0;
-		while (s[in] != c && s[in] != '\0')
-			o[i][j++] = s[in++];
-		o[i++][j] = '\0';
-	}
-	o[i] = NULL;
-	return (o);
 }
 
 char	**my_split(char const *s)

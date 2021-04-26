@@ -6,13 +6,13 @@
 #    By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/15 01:41:01 by dwanetta          #+#    #+#              #
-#    Updated: 2021/04/22 18:55:50 by kgale            ###   ########.fr        #
+#    Updated: 2021/04/26 13:02:16 by kgale            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 CC = gcc
-FLAGS = #-Wall #-Wextra #-Werror
+FLAGS = #-Wall -Wextra -Werror
 LIB = -L mlx_mac  -L libft
 OPTION_LIB = -lmlx -framework OpenGL -framework AppKit -lft
 OPTION = -c
@@ -25,6 +25,7 @@ SRCS =	main.c\
 		parse/map_utils.c
 
 OBJS_SRCS = ${SRCS:.c=.o}
+OBJS =	$(OBJS_SRCS)
 
 all: $(NAME)
 

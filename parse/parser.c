@@ -6,24 +6,39 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:56:18 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/22 19:14:37 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/26 13:29:49 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void	init_scene(t_scene *scene)
+void	free_split(char **split)
 {
-	scene->ceiling = 0;
-	scene->east_path = NULL;
-	scene->floor = 0;
-	scene->map = NULL;
-	scene->north_path = NULL;
-	scene->south_path = NULL;
-	scene->sprite_path = NULL;
-	scene->west_path = NULL;
-	scene->resolution->x = 0;
-	scene->resolution->y = 0;
+    int	i;
+
+    i = 0;
+    while (split[i])
+    {
+        free(split[i]);
+        i++;
+    }
+    free(split);
+}
+
+void	init_scene(t_scene **scene)
+{
+	*scene = (t_scene *)malloc(sizeof(t_scene));
+	(*scene)->ceiling = -1;
+	(*scene)->east_path = NULL;
+	(*scene)->floor = -1;
+	(*scene)->map = NULL;
+	(*scene)->north_path = NULL;
+	(*scene)->south_path = NULL;
+	(*scene)->sprite_path = NULL;
+	(*scene)->west_path = NULL;
+	(*scene)->resolution = (t_resolution *)malloc(sizeof(t_resolution));
+	(*scene)->resolution->x = -1;
+	(*scene)->resolution->y = -1;
 }
 
 int	line_parser(char *line, t_scene *scene, int fd)
@@ -45,7 +60,8 @@ int	line_parser(char *line, t_scene *scene, int fd)
 		{
 			close(fd);
 			free(line);
-			write(STDERR_FILENO, "Error\nInvalid map\n", 19);
+            free_scene(scene);
+			write(STDERR_FILENO, "Error\nInvalid map\n", 18);
 			exit(-1);
 		}
 	}
@@ -58,7 +74,8 @@ t_scene	*parser(int fd)
 	int		gnl;
 	char	*line;
 
-	init_scene(scene);
+	scene = NULL;
+	init_scene(&scene);
 	gnl = get_next_line((const int)fd, &line);
 	while (gnl > 0)
 	{
@@ -66,9 +83,10 @@ t_scene	*parser(int fd)
 		free(line);
 		gnl = get_next_line((const int)fd, &line);
 	}
+	//check_not_null(scene, line);
 	free(line);
-	////////////////////////////
-	/*Check for all not NULL*/
+    close(fd);
+	map_to_mass(scene);
 	return (scene);
 }
 
@@ -78,7 +96,7 @@ void	handle_map(char *line, t_scene *scene, int fd)
 
 	scene->map = ft_mapnew(line);
 	rd = get_next_line(fd, &line);
-	while (rd && *line && *line != '\n')
+	while (rd >= 0 && *line && *line != '\n')
 	{
 		ft_mapadd_back(&(scene->map), ft_mapnew(line));
 		free(line);
@@ -86,15 +104,12 @@ void	handle_map(char *line, t_scene *scene, int fd)
 	}
 	while (rd)
 	{
-		if (*line != '\0')
-		{//
-			printf("--------You suck--------\n");
-			free(line);
-			//here should be frees
-			exit(-1);
-		}//
+		if (line && *line && *line != '\n')
+            map_error(fd, scene, line);
 		free(line);
 		rd = get_next_line(fd, &line);
 	}
+    if (line && *line && *line != '\n')
+        map_error(fd, scene, line);
 	free(line);
 }

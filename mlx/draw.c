@@ -1,8 +1,6 @@
 #include "../includes/cub3d.h"
 #include <math.h>
-#include <mlx.h>
 #include <stdio.h>
-#include <mlx.h>
 #define HEIGHT 1080
 #define WIDTH 1920
 
@@ -14,56 +12,50 @@ int	create_trgb(int t, int r, int g, int b)
 int	key_hook(int keycode, t_vars *vars)
 {
 	printf("Hello from key_hook!\n");
+	//keycode = keycode + 1 - 1;
+	//vars->mlx = vars->mlx;
 	return (0);
 }
 
 int	win(t_scene *scene)
 {
-	int		x;
-	int		y;
-	int		yy;
-	int		xx;
-	t_map	*map;
+	int i;
+	int j;
+	int x;
+	int y;
 
-	map = scene->map;
-	x = 60;
-	while (map)
+	i = 0;
+	while (scene->mass[i / CUBE_SIZE])
 	{
-		y = 0;
-		while (map->line[y / 20])
+		j = 0;
+		while (scene->mass[i / CUBE_SIZE][j / CUBE_SIZE])
 		{
-			yy = y;
-			if (map->line[yy / 20] == '1')
+			x = j;
+			if (scene->mass[i / CUBE_SIZE][x / CUBE_SIZE] == '1')
 			{
-				while (yy < y + 20)
+				while (x < j + CUBE_SIZE)
 				{
-					xx = x;
-					while (xx < x + 20)
-					{
-						mlx_pixel_put(scene->vars.mlx, scene->vars.win, yy, xx, scene->ceiling);
-						xx++;
-					}
-					yy++;
+					y = i;
+					while (y < i + CUBE_SIZE)
+						mlx_pixel_put(scene->vars.mlx, scene->vars.win, x, y++, scene->ceiling);
+					x++;
 				}
 			}
-			else if (map->line[yy / 20] == '2')
+			else if (scene->mass[i / CUBE_SIZE][x / CUBE_SIZE] == '2')
 			{
-				while (yy < y + 20)
+				while (x < j + CUBE_SIZE)
 				{
-					xx = x;
-					while (xx < x + 20)
-					{
-						mlx_pixel_put(scene->vars.mlx, scene->vars.win, yy, xx, scene->floor);
-						xx++;
-					}
-					yy++;
+					y = i;
+					while (y < i + CUBE_SIZE)
+						mlx_pixel_put(scene->vars.mlx, scene->vars.win, x, y++, scene->floor);
+					x++;
 				}
 			}
-			y += 20;
+			j += CUBE_SIZE;
 		}
-		map = map->next;
-		x += 20;
+		i += CUBE_SIZE;
 	}
+	ft_raycast(scene);
 	return (0);
 }
 
