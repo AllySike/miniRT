@@ -39,7 +39,6 @@ void    check_resolution(int x, int y, t_scene *scene)
         y = max_y;
     scene->resolution->x = x;
     scene->resolution->y = y;
-    scene->rays = (int *)malloc(sizeof(int) * x);
 }
 
 void	handle_res_tex_col(char *line, t_scene *scene, int fd)

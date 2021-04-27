@@ -25,37 +25,43 @@ int	win(t_scene *scene)
 	int y;
 
 	i = 0;
-	while (scene->mass[i / CUBE_SIZE])
-	{
-		j = 0;
-		while (scene->mass[i / CUBE_SIZE][j / CUBE_SIZE])
-		{
-			x = j;
-			if (scene->mass[i / CUBE_SIZE][x / CUBE_SIZE] == '1')
-			{
-				while (x < j + CUBE_SIZE)
-				{
-					y = i;
-					while (y < i + CUBE_SIZE)
-						mlx_pixel_put(scene->vars.mlx, scene->vars.win, x, y++, scene->ceiling);
-					x++;
-				}
-			}
-			else if (scene->mass[i / CUBE_SIZE][x / CUBE_SIZE] == '2')
-			{
-				while (x < j + CUBE_SIZE)
-				{
-					y = i;
-					while (y < i + CUBE_SIZE)
-						mlx_pixel_put(scene->vars.mlx, scene->vars.win, x, y++, scene->floor);
-					x++;
-				}
-			}
-			j += CUBE_SIZE;
-		}
-		i += CUBE_SIZE;
-	}
+//	while (scene->mass[i / CUBE_SIZE])
+//	{
+//		j = 0;
+//		while (scene->mass[i / CUBE_SIZE][j / CUBE_SIZE])
+//		{
+//			x = j;
+//			if (scene->mass[i / CUBE_SIZE][x / CUBE_SIZE] == '1')
+//			{
+//				while (x < j + CUBE_SIZE)
+//				{
+//					y = i;
+//					while (y < i + CUBE_SIZE)
+//						mlx_pixel_put(scene->vars.mlx, scene->vars.win, x, y++, scene->ceiling);
+//					x++;
+//				}
+//			}
+//			else if (scene->mass[i / CUBE_SIZE][x / CUBE_SIZE] == '2')
+//			{
+//				while (x < j + CUBE_SIZE)
+//				{
+//					y = i;
+//					while (y < i + CUBE_SIZE)
+//						mlx_pixel_put(scene->vars.mlx, scene->vars.win, x, y++, scene->floor);
+//					x++;
+//				}
+//			}
+//			j += CUBE_SIZE;
+//		}
+//		i += CUBE_SIZE;
+//	}
 	ft_raycast(scene);
+//	t_rays *tmp = scene->rays;
+//	while (tmp)
+//    {
+//	    printf("%c %i", tmp->dir, tmp->dist);
+//        tmp = tmp->next;
+//    }
 	return (0);
 }
 

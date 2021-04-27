@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:56:18 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/26 13:29:49 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/27 16:28:36 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	free_split(char **split)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    while (split[i])
-    {
-        free(split[i]);
-        i++;
-    }
-    free(split);
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
 
 void	init_scene(t_scene **scene)
@@ -39,6 +39,10 @@ void	init_scene(t_scene **scene)
 	(*scene)->resolution = (t_resolution *)malloc(sizeof(t_resolution));
 	(*scene)->resolution->x = -1;
 	(*scene)->resolution->y = -1;
+    (*scene)->player.x = -1;
+    (*scene)->player.y = -1;
+    (*scene)->player.angle = -1;
+    (*scene)->rays = NULL;
 }
 
 int	line_parser(char *line, t_scene *scene, int fd)
@@ -60,7 +64,7 @@ int	line_parser(char *line, t_scene *scene, int fd)
 		{
 			close(fd);
 			free(line);
-            free_scene(scene);
+			free_scene(scene);
 			write(STDERR_FILENO, "Error\nInvalid map\n", 18);
 			exit(-1);
 		}
@@ -85,7 +89,7 @@ t_scene	*parser(int fd)
 	}
 	//check_not_null(scene, line);
 	free(line);
-    close(fd);
+	close(fd);
 	map_to_mass(scene);
 	return (scene);
 }
@@ -105,11 +109,11 @@ void	handle_map(char *line, t_scene *scene, int fd)
 	while (rd)
 	{
 		if (line && *line && *line != '\n')
-            map_error(fd, scene, line);
+			map_error(fd, scene, line);
 		free(line);
 		rd = get_next_line(fd, &line);
 	}
-    if (line && *line && *line != '\n')
-        map_error(fd, scene, line);
+	if (line && *line && *line != '\n')
+		map_error(fd, scene, line);
 	free(line);
 }

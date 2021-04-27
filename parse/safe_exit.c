@@ -21,8 +21,6 @@ void    free_map(t_scene *scene)
         scene->map = map;
         map = map->next;
     }
-    if (scene->player)
-        free(scene->player);
 }
 
 void    free_scene(t_scene *scene)

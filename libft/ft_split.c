@@ -6,7 +6,7 @@
 /*   By: kgale <kgale@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 17:23:39 by kgale             #+#    #+#             */
-/*   Updated: 2021/04/26 13:36:23 by kgale            ###   ########.fr       */
+/*   Updated: 2021/04/27 16:19:56 by kgale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
-static int	ft_find_word_start(int index, char const *s, char c)
+int	ft_find_word_start(int index, char const *s, char c)
 {
 	while (s[index] != '\0')
 	{
@@ -49,7 +49,7 @@ static int	ft_find_word_start(int index, char const *s, char c)
 	return (index);
 }
 
-static int	f(int index, char const *s, char c)
+int	f(int index, char const *s, char c)
 {
 	int	length;
 
@@ -62,7 +62,7 @@ static int	f(int index, char const *s, char c)
 	return (length);
 }
 
-static int	define(int *in, char const *s, char c, int *words)
+int	define(int *in, char const *s, char c, int *words)
 {
 	*in = 0;
 	*words = ft_count_words(s, c);

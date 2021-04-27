@@ -2,16 +2,17 @@
 
 static void set_player(int x, int y, char c, t_scene *scene)
 {
+    //scene->player = (*t_player)malloc(sizeof(t_player));
     if (c == 'N')
-        scene->player->angle = 0;
+        scene->player.angle = 0;
     else if (c == 'S')
-        scene->player->angle = 180;
+        scene->player.angle = 180;
     else if (c != 'W')
-        scene->player->angle = 270;
+        scene->player.angle = 270;
     else if (c != 'E')
-        scene->player->angle = 90;
-    scene->player->x = x;
-    scene->player->y = y;
+        scene->player.angle = 90;
+    scene->player.x = x;
+    scene->player.y = y;
 }
 
 static void mass_from_map(t_scene *scene, t_map   *map, int ii)
@@ -28,8 +29,8 @@ static void mass_from_map(t_scene *scene, t_map   *map, int ii)
             scene->mass[ii][i] = c;
         else if (c == '2')
             scene->mass[ii][i] = c;
-        else if ((c == 'N' || c == 'S' || c == 'W' || c == 'E') && !scene->player)
-            set_player(ii, i, c, scene);
+        else if ((c == 'N' || c == 'S' || c == 'W' || c == 'E') && scene->player.x < 0)
+            set_player(i, ii, c, scene);
         else
             error_with_map(scene);
         i++;
@@ -54,6 +55,8 @@ void    map_to_mass(t_scene *scene)
     tmp = scene->map;
     j = ft_mapsize(scene->map);
     scene->mass = (char **)malloc(sizeof(char*) * (j + 1));
+    scene->mass_y = j;
+    scene->mass_x = max;
     i = 0;
     while (i < j)
     {
