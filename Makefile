@@ -25,14 +25,16 @@ SRCS =	main.c\
 		parse/check_errors_with_file.c\
 		parse/parser.c\
 		parse/utils.c\
-		parse/map_utils.c
+		parse/map_utils.c\
+		parse/mass_utils.c\
+		parse/safe_exit.c
 
 OBJS_SRCS = ${SRCS:.c=.o}
 
 all: $(NAME)
 
 $(NAME) : $(OBJS_SRCS)
-		@$(CC) $(FLAGS) $(OPTION) $(SRCS)
+		@$(CC) $(FLAGS) $(OPTION) -I./includes $(SRCS)
 		@$(LIBFT)
 		@$(MLX)
 		$(CC) $(OBJS_SRCS) -o $(NAME) $(LIB) $(OPTION_LIB)

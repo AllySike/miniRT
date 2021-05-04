@@ -4,45 +4,45 @@
 CMakeFiles/untitled1.dir/main.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/main.c.obj: ../includes/libft.h
 CMakeFiles/untitled1.dir/main.c.obj: ../main.c
-CMakeFiles/untitled1.dir/main.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/main.c.obj: ../mlx_linux/mlx.h
 
 CMakeFiles/untitled1.dir/mlx/draw.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/mlx/draw.c.obj: ../includes/libft.h
 CMakeFiles/untitled1.dir/mlx/draw.c.obj: ../mlx/draw.c
-CMakeFiles/untitled1.dir/mlx/draw.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/mlx/draw.c.obj: ../mlx_linux/mlx.h
 
 CMakeFiles/untitled1.dir/mlx/raycast.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/mlx/raycast.c.obj: ../includes/libft.h
 CMakeFiles/untitled1.dir/mlx/raycast.c.obj: ../mlx/raycast.c
-CMakeFiles/untitled1.dir/mlx/raycast.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/mlx/raycast.c.obj: ../mlx_linux/mlx.h
 
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj: ../includes/libft.h
-CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj: ../mlx_linux/mlx.h
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj: ../parse/check_errors_with_file.c
 
 CMakeFiles/untitled1.dir/parse/map_utils.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/parse/map_utils.c.obj: ../includes/libft.h
-CMakeFiles/untitled1.dir/parse/map_utils.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/parse/map_utils.c.obj: ../mlx_linux/mlx.h
 CMakeFiles/untitled1.dir/parse/map_utils.c.obj: ../parse/map_utils.c
 
 CMakeFiles/untitled1.dir/parse/mass_utils.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/parse/mass_utils.c.obj: ../includes/libft.h
-CMakeFiles/untitled1.dir/parse/mass_utils.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/parse/mass_utils.c.obj: ../mlx_linux/mlx.h
 CMakeFiles/untitled1.dir/parse/mass_utils.c.obj: ../parse/mass_utils.c
 
 CMakeFiles/untitled1.dir/parse/parser.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/parse/parser.c.obj: ../includes/libft.h
-CMakeFiles/untitled1.dir/parse/parser.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/parse/parser.c.obj: ../mlx_linux/mlx.h
 CMakeFiles/untitled1.dir/parse/parser.c.obj: ../parse/parser.c
 
 CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: ../includes/libft.h
-CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: ../mlx_linux/mlx.h
 CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: ../parse/safe_exit.c
 
 CMakeFiles/untitled1.dir/parse/utils.c.obj: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/parse/utils.c.obj: ../includes/libft.h
-CMakeFiles/untitled1.dir/parse/utils.c.obj: ../mlx_mac/mlx.h
+CMakeFiles/untitled1.dir/parse/utils.c.obj: ../mlx_linux/mlx.h
 CMakeFiles/untitled1.dir/parse/utils.c.obj: ../parse/utils.c
 

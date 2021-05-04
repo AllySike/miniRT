@@ -79,145 +79,148 @@ include CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/main.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/main.c.obj: ../main.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/untitled1.dir/main.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\main.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\main.c"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\main.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\main.c"
 
 CMakeFiles/untitled1.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/main.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\main.c" > CMakeFiles\untitled1.dir\main.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\main.c" > CMakeFiles\untitled1.dir\main.c.i
 
 CMakeFiles/untitled1.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/main.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\main.c" -o CMakeFiles\untitled1.dir\main.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\main.c" -o CMakeFiles\untitled1.dir\main.c.s
 
 CMakeFiles/untitled1.dir/mlx/draw.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/mlx/draw.c.obj: ../mlx/draw.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled1.dir/mlx/draw.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\mlx\draw.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\draw.c"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\mlx\draw.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\draw.c"
 
 CMakeFiles/untitled1.dir/mlx/draw.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/mlx/draw.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\draw.c" > CMakeFiles\untitled1.dir\mlx\draw.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\draw.c" > CMakeFiles\untitled1.dir\mlx\draw.c.i
 
 CMakeFiles/untitled1.dir/mlx/draw.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/mlx/draw.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\draw.c" -o CMakeFiles\untitled1.dir\mlx\draw.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\draw.c" -o CMakeFiles\untitled1.dir\mlx\draw.c.s
+
+CMakeFiles/untitled1.dir/mlx/raycast.c.obj: CMakeFiles/untitled1.dir/flags.make
+CMakeFiles/untitled1.dir/mlx/raycast.c.obj: ../mlx/raycast.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled1.dir/mlx/raycast.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\mlx\raycast.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\raycast.c"
+
+CMakeFiles/untitled1.dir/mlx/raycast.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/mlx/raycast.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\raycast.c" > CMakeFiles\untitled1.dir\mlx\raycast.c.i
+
+CMakeFiles/untitled1.dir/mlx/raycast.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/mlx/raycast.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\raycast.c" -o CMakeFiles\untitled1.dir\mlx\raycast.c.s
 
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj: ../parse/check_errors_with_file.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\check_errors_with_file.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\check_errors_with_file.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\check_errors_with_file.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\check_errors_with_file.c"
 
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\check_errors_with_file.c" > CMakeFiles\untitled1.dir\parse\check_errors_with_file.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\check_errors_with_file.c" > CMakeFiles\untitled1.dir\parse\check_errors_with_file.c.i
 
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\check_errors_with_file.c" -o CMakeFiles\untitled1.dir\parse\check_errors_with_file.c.s
-
-CMakeFiles/untitled1.dir/parse/map_utils.c.obj: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/parse/map_utils.c.obj: ../parse/map_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled1.dir/parse/map_utils.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\map_utils.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\map_utils.c"
-
-CMakeFiles/untitled1.dir/parse/map_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/map_utils.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\map_utils.c" > CMakeFiles\untitled1.dir\parse\map_utils.c.i
-
-CMakeFiles/untitled1.dir/parse/map_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/map_utils.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\map_utils.c" -o CMakeFiles\untitled1.dir\parse\map_utils.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\check_errors_with_file.c" -o CMakeFiles\untitled1.dir\parse\check_errors_with_file.c.s
 
 CMakeFiles/untitled1.dir/parse/parser.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/parse/parser.c.obj: ../parse/parser.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled1.dir/parse/parser.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\parser.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\parser.c"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\parser.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\parser.c"
 
 CMakeFiles/untitled1.dir/parse/parser.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/parser.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\parser.c" > CMakeFiles\untitled1.dir\parse\parser.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\parser.c" > CMakeFiles\untitled1.dir\parse\parser.c.i
 
 CMakeFiles/untitled1.dir/parse/parser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/parser.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\parser.c" -o CMakeFiles\untitled1.dir\parse\parser.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\parser.c" -o CMakeFiles\untitled1.dir\parse\parser.c.s
 
 CMakeFiles/untitled1.dir/parse/utils.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/parse/utils.c.obj: ../parse/utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/untitled1.dir/parse/utils.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\utils.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\utils.c"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\utils.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\utils.c"
 
 CMakeFiles/untitled1.dir/parse/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/utils.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\utils.c" > CMakeFiles\untitled1.dir\parse\utils.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\utils.c" > CMakeFiles\untitled1.dir\parse\utils.c.i
 
 CMakeFiles/untitled1.dir/parse/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/utils.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\utils.c" -o CMakeFiles\untitled1.dir\parse\utils.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\utils.c" -o CMakeFiles\untitled1.dir\parse\utils.c.s
 
-CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: ../parse/safe_exit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/untitled1.dir/parse/safe_exit.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\safe_exit.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\safe_exit.c"
+CMakeFiles/untitled1.dir/parse/map_utils.c.obj: CMakeFiles/untitled1.dir/flags.make
+CMakeFiles/untitled1.dir/parse/map_utils.c.obj: ../parse/map_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/untitled1.dir/parse/map_utils.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\map_utils.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\map_utils.c"
 
-CMakeFiles/untitled1.dir/parse/safe_exit.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/safe_exit.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\safe_exit.c" > CMakeFiles\untitled1.dir\parse\safe_exit.c.i
+CMakeFiles/untitled1.dir/parse/map_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/map_utils.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\map_utils.c" > CMakeFiles\untitled1.dir\parse\map_utils.c.i
 
-CMakeFiles/untitled1.dir/parse/safe_exit.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/safe_exit.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\safe_exit.c" -o CMakeFiles\untitled1.dir\parse\safe_exit.c.s
+CMakeFiles/untitled1.dir/parse/map_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/map_utils.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\map_utils.c" -o CMakeFiles\untitled1.dir\parse\map_utils.c.s
 
 CMakeFiles/untitled1.dir/parse/mass_utils.c.obj: CMakeFiles/untitled1.dir/flags.make
 CMakeFiles/untitled1.dir/parse/mass_utils.c.obj: ../parse/mass_utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/untitled1.dir/parse/mass_utils.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\mass_utils.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\mass_utils.c"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\mass_utils.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\mass_utils.c"
 
 CMakeFiles/untitled1.dir/parse/mass_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/mass_utils.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\mass_utils.c" > CMakeFiles\untitled1.dir\parse\mass_utils.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\mass_utils.c" > CMakeFiles\untitled1.dir\parse\mass_utils.c.i
 
 CMakeFiles/untitled1.dir/parse/mass_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/mass_utils.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\mass_utils.c" -o CMakeFiles\untitled1.dir\parse\mass_utils.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\mass_utils.c" -o CMakeFiles\untitled1.dir\parse\mass_utils.c.s
 
-CMakeFiles/untitled1.dir/mlx/raycast.c.obj: CMakeFiles/untitled1.dir/flags.make
-CMakeFiles/untitled1.dir/mlx/raycast.c.obj: ../mlx/raycast.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/untitled1.dir/mlx/raycast.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\mlx\raycast.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\raycast.c"
+CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: CMakeFiles/untitled1.dir/flags.make
+CMakeFiles/untitled1.dir/parse/safe_exit.c.obj: ../parse/safe_exit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/untitled1.dir/parse/safe_exit.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled1.dir\parse\safe_exit.c.obj   -c "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\safe_exit.c"
 
-CMakeFiles/untitled1.dir/mlx/raycast.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/mlx/raycast.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\raycast.c" > CMakeFiles\untitled1.dir\mlx\raycast.c.i
+CMakeFiles/untitled1.dir/parse/safe_exit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/parse/safe_exit.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\safe_exit.c" > CMakeFiles\untitled1.dir\parse\safe_exit.c.i
 
-CMakeFiles/untitled1.dir/mlx/raycast.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/mlx/raycast.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\mlx\raycast.c" -o CMakeFiles\untitled1.dir\mlx\raycast.c.s
+CMakeFiles/untitled1.dir/parse/safe_exit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/parse/safe_exit.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\parse\safe_exit.c" -o CMakeFiles\untitled1.dir\parse\safe_exit.c.s
 
 # Object files for target untitled1
 untitled1_OBJECTS = \
 "CMakeFiles/untitled1.dir/main.c.obj" \
 "CMakeFiles/untitled1.dir/mlx/draw.c.obj" \
+"CMakeFiles/untitled1.dir/mlx/raycast.c.obj" \
 "CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj" \
-"CMakeFiles/untitled1.dir/parse/map_utils.c.obj" \
 "CMakeFiles/untitled1.dir/parse/parser.c.obj" \
 "CMakeFiles/untitled1.dir/parse/utils.c.obj" \
-"CMakeFiles/untitled1.dir/parse/safe_exit.c.obj" \
+"CMakeFiles/untitled1.dir/parse/map_utils.c.obj" \
 "CMakeFiles/untitled1.dir/parse/mass_utils.c.obj" \
-"CMakeFiles/untitled1.dir/mlx/raycast.c.obj"
+"CMakeFiles/untitled1.dir/parse/safe_exit.c.obj"
 
 # External object files for target untitled1
 untitled1_EXTERNAL_OBJECTS =
 
 untitled1.exe: CMakeFiles/untitled1.dir/main.c.obj
 untitled1.exe: CMakeFiles/untitled1.dir/mlx/draw.c.obj
+untitled1.exe: CMakeFiles/untitled1.dir/mlx/raycast.c.obj
 untitled1.exe: CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.obj
-untitled1.exe: CMakeFiles/untitled1.dir/parse/map_utils.c.obj
 untitled1.exe: CMakeFiles/untitled1.dir/parse/parser.c.obj
 untitled1.exe: CMakeFiles/untitled1.dir/parse/utils.c.obj
-untitled1.exe: CMakeFiles/untitled1.dir/parse/safe_exit.c.obj
+untitled1.exe: CMakeFiles/untitled1.dir/parse/map_utils.c.obj
 untitled1.exe: CMakeFiles/untitled1.dir/parse/mass_utils.c.obj
-untitled1.exe: CMakeFiles/untitled1.dir/mlx/raycast.c.obj
+untitled1.exe: CMakeFiles/untitled1.dir/parse/safe_exit.c.obj
 untitled1.exe: CMakeFiles/untitled1.dir/build.make
+untitled1.exe: D:/фллеха/Учёба
+untitled1.exe: D:/фллеха/Учёба
+untitled1.exe: D:/фллеха/Учёба
 untitled1.exe: CMakeFiles/untitled1.dir/linklibs.rsp
 untitled1.exe: CMakeFiles/untitled1.dir/objects1.rsp
 untitled1.exe: CMakeFiles/untitled1.dir/link.txt
