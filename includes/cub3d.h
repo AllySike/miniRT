@@ -17,7 +17,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>
-# include "../mlx_mac/mlx.h"
+# include "../mlx_linux/mlx.h"
 # include "libft.h"
 # define CUBE_SIZE 1
 # define PI 3.14

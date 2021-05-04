@@ -29,14 +29,14 @@ void	handle_color(char *line, t_scene *scene, int fd)
 
 void    check_resolution(int x, int y, t_scene *scene)
 {
-    int max_y;
-    int max_x;
+    // int max_y;
+    // int max_x;
 
-    mlx_get_screen_size(&max_x, &max_y);
-    if (max_x < x)
-        x = max_x;
-    if (max_y < y)
-        y = max_y;
+    // mlx_get_screen_size(&max_x, &max_y);
+    // if (max_x < x)
+    //     x = max_x;
+    // if (max_y < y)
+    //     y = max_y;
     scene->resolution->x = x;
     scene->resolution->y = y;
 }

@@ -9,30 +9,33 @@
 #    Updated: 2021/04/26 13:02:16 by kgale            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
+#-I includes/cub3d.h -I includes/libft.h
+#-Wno-unused-result
 NAME = cub3D
 CC = gcc
-FLAGS = #-Wall -Wextra -Werror
-LIB = -L mlx_mac  -L libft
-OPTION_LIB = -lmlx -framework OpenGL -framework AppKit -lft
-OPTION = -c
+FLAGS = -Wno-unused-result #-Wall -Wextra -Werror=unused-result
+LIB = -L mlx_linux/ -L libft/
+OPTION_LIB = -lmlx -lXext -lX11 -lm -lbsd -lft
+OPTION = -O3 -c
 LIBFT = make -C libft
+MLX = 	make -C mlx_linux
 SRCS =	main.c\
 		mlx/draw.c\
+		mlx/raycast.c\
 		parse/check_errors_with_file.c\
 		parse/parser.c\
 		parse/utils.c\
 		parse/map_utils.c
 
 OBJS_SRCS = ${SRCS:.c=.o}
-OBJS =	$(OBJS_SRCS)
 
 all: $(NAME)
 
 $(NAME) : $(OBJS_SRCS)
 		@$(CC) $(FLAGS) $(OPTION) $(SRCS)
 		@$(LIBFT)
-		@$(CC) $(LIB) $(OPTION_LIB) $(OBJS_SRCS) -o $(NAME)
+		@$(MLX)
+		$(CC) $(OBJS_SRCS) -o $(NAME) $(LIB) $(OPTION_LIB)
 clean:
 		rm -f $(OBJS_SRCS)
 		@$(LIBFT) clean

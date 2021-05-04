@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/kgale/CLionProjects/untitled1
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/kgale/CLionProjects/untitled1/cmake-build-debug
+MinGW not found at: C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64 Configure
+
+Cannot get compiler information:
+	Cannot run program "C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\gcc.exe" (in directory "D:\фллеха\Учёба хочу домой\Школа 21\cub3d\cmake-build-debug"): CreateProcess error=2, Не удается найти указанный файл

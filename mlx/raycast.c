@@ -5,7 +5,7 @@ static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
     double     x;
     double     y;
     double  dist_x;
-
+/*
     x = scene->player.x;
     while (x >= 0 && x <= scene->mass_x)
     {
@@ -19,7 +19,7 @@ static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
                 mlx_pixel_put(scene->vars.mlx, scene->vars.win, x - x_term, y - y_term, 0xff0000);
             break;
         }
-    }
+    }*/
     return (dist_x);
 }
 
@@ -28,7 +28,7 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
     double     x;
     double     y;
     double  dist_y;
-
+/*
     y = scene->player.y;
     while (y >= 0 && y <= scene->mass_y)
     {
@@ -42,7 +42,7 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
                 mlx_pixel_put(scene->vars.mlx, scene->vars.win, x - x_term, y - y_term, 0x00ff00);
             break;
         }
-    }
+    }*/
     return (dist_y);
 }
 
@@ -51,7 +51,7 @@ static void add_ray(t_scene *scene, double dist, char dir)
     t_rays	*start;
     t_rays 	*ray;
 
-    ray = (t_scene *)malloc(sizeof(t_scene));
+    ray = (t_rays *)malloc(sizeof(t_rays));
     ray->dir = dir;
     ray->dist = dist;
     ray->next = NULL;

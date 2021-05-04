@@ -1,6 +1,4 @@
 #include "../includes/cub3d.h"
-#include <math.h>
-#include <stdio.h>
 #define HEIGHT 1080
 #define WIDTH 1920
 
