@@ -11,20 +11,27 @@ static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
     x = scene->player.x + x_term;
     cos_a = cos(angle * PI / 180);
     tan_a = tan(angle * PI / 180);
-    y = scene->player.y +  ((x - scene->player.x) / tan_a);
-    while (x >= 0 && x <= scene->mass_x && y >= 0 && y <= scene->mass_y)
+    mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(scene->player.x * CUBE_SIZE),
+                  (int)floor(scene->player.y * CUBE_SIZE), 0xFF0000);
+    if (angle == 0)
+        x_term = -1;
+    else if (angle == 180)
+        x_term == 1;
+    y = scene->player.y + x_term * ((scene->player.x - x) * tan_a);
+    while (x >= 0 && x <= scene->mass_x && y + y_term >= 0 && y <= scene->mass_y)
     {
         mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
-                      (int)floor(y * CUBE_SIZE), 0xff0000);
-        if (scene->mass[(int)floor(y), (int)floor(x)] == '1')
+                      (int)floor(y * CUBE_SIZE), 0xFF0000);
+        if (scene->mass[(int)floor(y)][(int)x] == '1' || scene->mass[(int)floor(y) + y_term][(int)(x)] == '1'
+            || scene->mass[(int)floor(y)][(int)x] == '\0')
         {
-            dist_x = x - scene->player.x / cos_a;
-            mlx_pixel_put(scene->vars.mlx, scene->vars.win, (x - x_term) * CUBE_SIZE,
-                              (y - y_term) * CUBE_SIZE, 0xff00FF);
+            dist_x = y - y_term * (scene->player.y - y) / cos_a;
+//            mlx_pixel_put(scene->vars.mlx, scene->vars.win, (x - x_term) * CUBE_SIZE,
+//                          (y - y_term) * CUBE_SIZE, 0x00ffFF);
             return (dist_x);
         }
         x += x_term;
-        y = scene->player.y + y_term * ((x - scene->player.x) / tan_a);
+        y = scene->player.y + ((x - scene->player.x) * tan_a);
     }
     return (dist_x);
 }
@@ -40,20 +47,27 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
     y = scene->player.y + y_term;
     sin_a = sin(angle * PI / 180);
     tan_a = tan(angle * PI / 180);
-    x = scene->player.x + (y - scene->player.y) * tan_a;
+    mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(scene->player.x * CUBE_SIZE),
+                  (int)floor(scene->player.y * CUBE_SIZE), 0x00ffFF);
+    if (angle == 90)
+        x_term = -1;
+    else if (angle == 270)
+        x_term == 1;
+    x = scene->player.x + y_term * ((scene->player.y - y) * tan_a);
     while (x >= 0 && x <= scene->mass_x && y >= 0 && y <= scene->mass_y)
     {
-        mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor((x - x_term) * CUBE_SIZE),
-                      (int)floor((y - y_term) * CUBE_SIZE), 0x00ff00);
-        if (scene->mass[(int)floor(y), (int)floor(x)] == '1')
+        mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
+                      (int)floor(y * CUBE_SIZE), 0x00ff00);
+        if (scene->mass[(int)y][(int)floor(x)] == '1' || scene->mass[(int)y][(int)floor(x) + x_term] == '1'
+           || scene->mass[(int)y][(int)floor(x)] == '\0')
         {
-            dist_y = x - scene->player.x / sin_a;
+            dist_y = x - x_term * (scene->player.x - x) / sin_a;
 //            mlx_pixel_put(scene->vars.mlx, scene->vars.win, (x - x_term) * CUBE_SIZE,
 //                          (y - y_term) * CUBE_SIZE, 0x00ffFF);
             return (dist_y);
         }
         y += y_term;
-        x = scene->player.x + x_term * ((y - scene->player.y) * tan_a);
+        x = scene->player.x + ((y - scene->player.y) * tan_a);
     }
     return (dist_y);
 }
@@ -116,13 +130,13 @@ void ft_raycast(t_scene *scene)
     while (curr--)
     {
         if (angle < 90)
-            raycast(scene, angle, 1, 1);
-        else if (angle < 180)
-            raycast(scene, angle, 1, -1);
-        else if (angle <= 270)
             raycast(scene, angle, -1, -1);
-        else
+        else if (angle <= 180)
             raycast(scene, angle, -1, 1);
+        else if (angle <= 270)
+            raycast(scene, angle, 1, 1);
+        else
+            raycast(scene, angle, 1, -1);
         angle += step;
     }
 }
