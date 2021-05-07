@@ -22,7 +22,7 @@ void	free_split(char **split)
 		free(split[i]);
 		i++;
 	}
-	free(split);
+	//free(split);
 }
 
 void	init_scene(t_scene **scene)
@@ -84,7 +84,7 @@ t_scene	*parser(int fd)
 	while (gnl > 0)
 	{
 		line_parser(line, scene, fd);
-		free(line);
+		//free(line);
 		gnl = get_next_line((const int)fd, &line);
 	}
 	//check_not_null(scene, line);

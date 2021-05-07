@@ -14,11 +14,11 @@
 NAME = cub3D
 CC = gcc
 FLAGS = -Wno-unused-result #-Wall -Wextra -Werror=unused-result
-LIB = -L mlx_linux/ -L libft/
-OPTION_LIB = -lmlx -lXext -lX11 -lm -lbsd -lft
-OPTION = -O3 -c
+LIB = -L mlx_mac -L libft
+OPTION_LIB = -lmlx -framework OpenGL -framework AppKit -lft
+OPTION = -c
 LIBFT = make -C libft
-MLX = 	make -C mlx_linux
+MLX = 	make -C mlx_mac
 SRCS =	main.c\
 		mlx/draw.c\
 		mlx/raycast.c\

@@ -13,6 +13,7 @@ static void set_player(int x, int y, char c, t_scene *scene)
         scene->player.angle = 90;
     scene->player.x = x;
     scene->player.y = y;
+    scene->mass[y][x] = '0';
 }
 
 static void mass_from_map(t_scene *scene, t_map   *map, int ii)

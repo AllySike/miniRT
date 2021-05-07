@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
+/Users/kgale/Desktop/mycub/includes/cub3d.h
 unistd.h
 -
 fcntl.h
@@ -16,11 +16,11 @@ stdlib.h
 math.h
 -
 ../mlx_linux/mlx.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/mlx_linux/mlx.h
+/Users/kgale/Desktop/mycub/mlx_linux/mlx.h
 libft.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/libft.h
+/Users/kgale/Desktop/mycub/includes/libft.h
 
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/libft.h
+/Users/kgale/Desktop/mycub/includes/libft.h
 stdlib.h
 -
 string.h
@@ -36,41 +36,9 @@ unistd.h
 stdio.h
 -
 
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/main.c
-includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/mlx/draw.c
+/Users/kgale/Desktop/mycub/mlx/raycast.c
 ../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
+/Users/kgale/Desktop/mycub/includes/cub3d.h
 
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/mlx/raycast.c
-../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/mlx_linux/mlx.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/parse/check_errors_with_file.c
-../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/parse/map_utils.c
-../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/parse/mass_utils.c
-../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/parse/parser.c
-../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/parse/safe_exit.c
-../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
-
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/parse/utils.c
-../includes/cub3d.h
-D:/фллеха/Учёба хочу домой/Школа 21/cub3d/includes/cub3d.h
+/Users/kgale/Desktop/mycub/mlx_linux/mlx.h
 
