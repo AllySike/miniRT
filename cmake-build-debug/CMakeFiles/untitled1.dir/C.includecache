@@ -36,13 +36,9 @@ unistd.h
 stdio.h
 -
 
+/Users/kgale/Desktop/mycub/mlx/raycast.c
+../includes/cub3d.h
+/Users/kgale/Desktop/mycub/includes/cub3d.h
+
 /Users/kgale/Desktop/mycub/mlx_linux/mlx.h
-
-/Users/kgale/Desktop/mycub/parse/mass_utils.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/parse/safe_exit.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
 

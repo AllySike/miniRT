@@ -122,7 +122,7 @@ int	ft_draw(t_scene *scene)
 	mlx_loop_hook(scene->vars.mlx, win, scene);
 	mlx_hook(scene->vars.win, 17, 0, ft_close, &(scene->vars));
     mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);
-    mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);
+    mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);//сделать движения в draw и зажатие/отжатие клавиш
 	mlx_loop(scene->vars.mlx);
 	return (0);
 }

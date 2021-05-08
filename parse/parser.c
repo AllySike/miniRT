@@ -88,6 +88,8 @@ t_scene	*parser(int fd)
 		gnl = get_next_line((const int)fd, &line);
 	}
 	//check_not_null(scene, line);
+	//проверка карты на её закрытость и правильность
+	//проверка на лики
 	free(line);
 	close(fd);
 	map_to_mass(scene);
