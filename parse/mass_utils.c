@@ -26,13 +26,13 @@ static void mass_from_map(t_scene *scene, t_map   *map, int ii)
     while (map->line[i])
     {
         c = map->line[i];
-        if (c == '0' || c == '1' || c == ' ')
+        if (c == '0' || c == '1')
             scene->mass[ii][i] = c;
         else if (c == '2')
             scene->mass[ii][i] = c;
         else if ((c == 'N' || c == 'S' || c == 'W' || c == 'E') && scene->player.x < 0)
             set_player(i, ii, c, scene);
-        else
+        else if (c != ' ')
             error_with_map(scene);
         i++;
     }

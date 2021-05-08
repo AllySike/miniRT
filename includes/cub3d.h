@@ -21,7 +21,7 @@
 # include "libft.h"
 # define CUBE_SIZE 20
 # define ROTATE 10
-# define STEP 1
+# define STEP 0.5
 # define PI 3.14
 # define FOV 60
 

@@ -6,34 +6,24 @@ static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
     double      y;
     double  dist_x;
     double  tan_a;
-    int vert;
 
-    vert = 0;
-    if (floor(angle) == 180 || floor(angle) == 0)
-        x_term = 0;
-    if (floor(angle) == 180)
-        vert = 1;
-    else if (floor(angle) == 0)
-        vert = -1;
     x = scene->player.x;
     tan_a = tan(angle * PI / 180);
     mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(scene->player.x * CUBE_SIZE),
                   (int)floor(scene->player.y * CUBE_SIZE), 0xFFFF00);
-    y = scene->player.y + y_term * ((x - scene->player.x) / tan_a) + vert;
-    while (x >= 0 && x <= scene->mass_x && y >= 0 && y <= scene->mass_y
+    y = scene->player.y + y_term * ((x - scene->player.x) / tan_a);
+    while (x >= 0 && x < scene->mass_x && y >= 0 && y < scene->mass_y
     && scene->mass[(int)floor(y)][(int)x])
     {
         mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
                       (int)floor(y * CUBE_SIZE), 0xFFFF00);
-        if (scene->mass[(int)floor(y)][(int)floor(x)] == '1'/* || scene->mass[(int)floor(y) + y_term][(int)floor(x)] == '1'*/)
+        if (scene->mass[(int)floor(y)][(int)floor(x)] != '0')
         {
             dist_x = fabs(sqrt(pow(x, 2) + pow(y, 2)));
             return (dist_x);
         }
         x += x_term;
-        if (vert == 0)
-            y = (scene->player.y + y_term * fabs((x - scene->player.x) / tan_a));
-        y += vert;
+        y = (scene->player.y + y_term * fabs((x - scene->player.x) / tan_a));
     }
     return (dist_x);
 }
@@ -44,15 +34,7 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
     double     y;
     double  dist_y;
     double  tan_a;
-    int horiz;
 
-    horiz = 0;
-    if (floor(angle) == 90 || floor(angle) == 270)
-        y_term = 0;
-    if (floor(angle) == 90)
-        horiz = -1;
-    else if (floor(angle) == 270)
-        horiz = 1;
     y = scene->player.y;
     tan_a = tan(angle * PI / 180);
     mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(scene->player.x * CUBE_SIZE),
@@ -62,15 +44,13 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
     {
         mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
                       (int)floor(y * CUBE_SIZE), 0xFF0000);
-        if (scene->mass[(int)y][(int)floor(x)] == '1'/* || scene->mass[(int)y][(int)floor(x) + x_term] == '1'*/)
+        if (scene->mass[(int)y][(int)floor(x)] != '0')
         {
             dist_y = fabs(sqrt(pow(x, 2) + pow(y, 2)));
             return (dist_y);
         }
         y += y_term;
-        if (horiz == 0)
-            x = scene->player.x + x_term * fabs((y - scene->player.y) * tan_a);
-        x += horiz;
+        x = scene->player.x + x_term * fabs((y - scene->player.y) * tan_a);
     }
     return (dist_y);
 }
@@ -136,11 +116,11 @@ void ft_raycast(t_scene *scene)
             angle += 360;
         if (angle > 360)
             angle -= 360;
-        if (angle <= 90)
+        if (angle < 90)
             raycast(scene, angle, -1, -1);
-        else if (angle <= 180)
+        else if (angle < 180)
             raycast(scene, angle, -1, 1);
-        else if (angle <= 270)
+        else if (angle < 270)
             raycast(scene, angle, 1, 1);
         else
             raycast(scene, angle, 1, -1);

@@ -121,7 +121,8 @@ int	ft_draw(t_scene *scene)
 	scene->vars.win = mlx_new_window(scene->vars.mlx, scene->resolution->x, scene->resolution->y, "cub3d");
 	mlx_loop_hook(scene->vars.mlx, win, scene);
 	mlx_hook(scene->vars.win, 17, 0, ft_close, &(scene->vars));
-	mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);
+    mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);
+    mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);
 	mlx_loop(scene->vars.mlx);
 	return (0);
 }
