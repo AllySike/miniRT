@@ -21,11 +21,11 @@ static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
                   (int)floor(scene->player.y * CUBE_SIZE), 0xFFFF00);
     y = scene->player.y + y_term * ((x - scene->player.x) / tan_a) + vert;
     while (x >= 0 && x <= scene->mass_x && y >= 0 && y <= scene->mass_y
-    && scene->mass[(int)y][(int)floor(x)])
+    && scene->mass[(int)floor(y)][(int)x])
     {
         mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
                       (int)floor(y * CUBE_SIZE), 0xFFFF00);
-        if (scene->mass[(int)floor(y)][(int)(x)] == '1' || scene->mass[(int)floor(y) + y_term][(int)x] == '1')
+        if (scene->mass[(int)floor(y)][(int)floor(x)] == '1'/* || scene->mass[(int)floor(y) + y_term][(int)floor(x)] == '1'*/)
         {
             dist_x = fabs(sqrt(pow(x, 2) + pow(y, 2)));
             return (dist_x);
@@ -62,7 +62,7 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
     {
         mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
                       (int)floor(y * CUBE_SIZE), 0xFF0000);
-        if (scene->mass[(int)y][(int)floor(x)] == '1' || scene->mass[(int)y][(int)floor(x) + x_term] == '1')
+        if (scene->mass[(int)y][(int)floor(x)] == '1'/* || scene->mass[(int)y][(int)floor(x) + x_term] == '1'*/)
         {
             dist_y = fabs(sqrt(pow(x, 2) + pow(y, 2)));
             return (dist_y);
@@ -127,9 +127,9 @@ void ft_raycast(t_scene *scene)
     double angle;
     int curr;
 
-    step = 0.05;//(FOV / (scene->resolution->x / 100)) - 1;
+    step = ((double)FOV / scene->resolution->x);
     angle = (scene->player.angle - (FOV / 2));
-    curr = 60 / 0.05;//scene->resolution->x / 100;
+    curr = scene->resolution->x;
     while (curr--)
     {
         if (angle < 0)

@@ -23,10 +23,10 @@ int	win(t_scene *scene)
 	int y;
 
 	i = 0;
-	while (scene->mass[i / CUBE_SIZE])
+	while (i / CUBE_SIZE < scene->mass_y)
 	{
 		j = 0;
-		while (scene->mass[i / CUBE_SIZE][j / CUBE_SIZE])
+		while (j / CUBE_SIZE < scene->mass_x)
 		{
 			x = j;
 			if (scene->mass[i / CUBE_SIZE][x / CUBE_SIZE] == '1')
@@ -49,6 +49,16 @@ int	win(t_scene *scene)
 					x++;
 				}
 			}
+            else
+            {
+                while (x < j + CUBE_SIZE)
+                {
+                    y = i;
+                    while (y < i + CUBE_SIZE)
+                        mlx_pixel_put(scene->vars.mlx, scene->vars.win, x, y++, 0x000000);
+                    x++;
+                }
+            }
 			j += CUBE_SIZE;
 		}
 		i += CUBE_SIZE;
@@ -74,12 +84,34 @@ int	ft_close(t_vars *vars)
 	exit(0);
 }
 
-int	ft_hook(int keycode, t_vars *vars)
+void ft_move_player(double x, double y, t_scene *scene)
 {
-	if (keycode == 53)
-	{
-		ft_close(vars);
-	}
+    if (scene->mass[(int)floor(y)][(int)floor(x)] != '1')
+    {
+        scene->player.x = x;
+        scene->player.y = y;
+    }
+}
+
+int	ft_hook(int keycode, t_scene *scene) {
+    if (keycode == 53)
+        ft_close(&(scene->vars));
+    else if (keycode == 123)
+        scene->player.angle += ROTATE;
+    else if (keycode == 124)
+        scene->player.angle -= ROTATE;
+    else if (keycode == 126 || keycode == 13)
+    ft_move_player(scene->player.x - STEP * sin(scene->player.angle * PI / 180),
+                   scene->player.y - STEP * cos(scene->player.angle * PI / 180), scene);
+    else if (keycode == 1 || keycode == 125)
+        ft_move_player(scene->player.x + STEP * sin(scene->player.angle * PI / 180),
+                       scene->player.y + STEP * cos(scene->player.angle * PI / 180), scene);
+    else if (keycode == 2)
+        ft_move_player(scene->player.x - STEP * sin((scene->player.angle - 90) * PI / 180),
+                       scene->player.y - STEP * cos((scene->player.angle - 90) * PI / 180), scene);
+    else if (keycode == 0)
+        ft_move_player(scene->player.x + STEP * sin((scene->player.angle - 90) * PI / 180),
+                       scene->player.y + STEP * cos((scene->player.angle - 90) * PI / 180), scene);
 	return (0);
 }
 
@@ -89,7 +121,7 @@ int	ft_draw(t_scene *scene)
 	scene->vars.win = mlx_new_window(scene->vars.mlx, scene->resolution->x, scene->resolution->y, "cub3d");
 	mlx_loop_hook(scene->vars.mlx, win, scene);
 	mlx_hook(scene->vars.win, 17, 0, ft_close, &(scene->vars));
-	mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, &(scene->vars));
+	mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);
 	mlx_loop(scene->vars.mlx);
 	return (0);
 }

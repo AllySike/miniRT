@@ -20,6 +20,8 @@
 # include "../mlx_linux/mlx.h"
 # include "libft.h"
 # define CUBE_SIZE 20
+# define ROTATE 10
+# define STEP 1
 # define PI 3.14
 # define FOV 60
 
