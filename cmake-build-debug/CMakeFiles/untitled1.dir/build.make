@@ -193,6 +193,32 @@ CMakeFiles/untitled1.dir/mlx/raycast.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/mlx/raycast.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kgale/Desktop/mycub/mlx/raycast.c -o CMakeFiles/untitled1.dir/mlx/raycast.c.s
 
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o: CMakeFiles/untitled1.dir/flags.make
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o: ../mlx/raycast_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o -c /Users/kgale/Desktop/mycub/mlx/raycast_utils.c
+
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/mlx/raycast_utils.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kgale/Desktop/mycub/mlx/raycast_utils.c > CMakeFiles/untitled1.dir/mlx/raycast_utils.c.i
+
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/mlx/raycast_utils.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kgale/Desktop/mycub/mlx/raycast_utils.c -o CMakeFiles/untitled1.dir/mlx/raycast_utils.c.s
+
+CMakeFiles/untitled1.dir/mlx/textures.c.o: CMakeFiles/untitled1.dir/flags.make
+CMakeFiles/untitled1.dir/mlx/textures.c.o: ../mlx/textures.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/untitled1.dir/mlx/textures.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/untitled1.dir/mlx/textures.c.o -c /Users/kgale/Desktop/mycub/mlx/textures.c
+
+CMakeFiles/untitled1.dir/mlx/textures.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled1.dir/mlx/textures.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kgale/Desktop/mycub/mlx/textures.c > CMakeFiles/untitled1.dir/mlx/textures.c.i
+
+CMakeFiles/untitled1.dir/mlx/textures.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled1.dir/mlx/textures.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kgale/Desktop/mycub/mlx/textures.c -o CMakeFiles/untitled1.dir/mlx/textures.c.s
+
 # Object files for target untitled1
 untitled1_OBJECTS = \
 "CMakeFiles/untitled1.dir/main.c.o" \
@@ -203,7 +229,9 @@ untitled1_OBJECTS = \
 "CMakeFiles/untitled1.dir/parse/utils.c.o" \
 "CMakeFiles/untitled1.dir/parse/safe_exit.c.o" \
 "CMakeFiles/untitled1.dir/parse/mass_utils.c.o" \
-"CMakeFiles/untitled1.dir/mlx/raycast.c.o"
+"CMakeFiles/untitled1.dir/mlx/raycast.c.o" \
+"CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o" \
+"CMakeFiles/untitled1.dir/mlx/textures.c.o"
 
 # External object files for target untitled1
 untitled1_EXTERNAL_OBJECTS =
@@ -217,11 +245,13 @@ untitled1: CMakeFiles/untitled1.dir/parse/utils.c.o
 untitled1: CMakeFiles/untitled1.dir/parse/safe_exit.c.o
 untitled1: CMakeFiles/untitled1.dir/parse/mass_utils.c.o
 untitled1: CMakeFiles/untitled1.dir/mlx/raycast.c.o
+untitled1: CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o
+untitled1: CMakeFiles/untitled1.dir/mlx/textures.c.o
 untitled1: CMakeFiles/untitled1.dir/build.make
 untitled1: /Users/kgale/Desktop/my_cub/mlx_mac/libmlx.a
 untitled1: /Users/kgale/Desktop/my_cub/libft/libft.a
 untitled1: CMakeFiles/untitled1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable untitled1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable untitled1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

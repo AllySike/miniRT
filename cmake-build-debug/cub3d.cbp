@@ -87,6 +87,12 @@
 		<Unit filename="/Users/kgale/Desktop/mycub/mlx/raycast.c">
 			<Option target="untitled1"/>
 		</Unit>
+		<Unit filename="/Users/kgale/Desktop/mycub/mlx/raycast_utils.c">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/kgale/Desktop/mycub/mlx/textures.c">
+			<Option target="untitled1"/>
+		</Unit>
 		<Unit filename="/Users/kgale/Desktop/mycub/parse/check_errors_with_file.c">
 			<Option target="untitled1"/>
 		</Unit>

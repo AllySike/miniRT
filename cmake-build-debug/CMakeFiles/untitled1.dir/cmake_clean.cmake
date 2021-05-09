@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/untitled1.dir/main.c.o"
   "CMakeFiles/untitled1.dir/mlx/draw.c.o"
   "CMakeFiles/untitled1.dir/mlx/raycast.c.o"
+  "CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o"
+  "CMakeFiles/untitled1.dir/mlx/textures.c.o"
   "CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.o"
   "CMakeFiles/untitled1.dir/parse/map_utils.c.o"
   "CMakeFiles/untitled1.dir/parse/mass_utils.c.o"

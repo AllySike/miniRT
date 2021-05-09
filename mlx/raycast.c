@@ -1,10 +1,41 @@
 #include "../includes/cub3d.h"
 
+void ft_move_player(double x, double y, t_scene *scene)
+{
+    if (scene->mass[(int)floor(y)][(int)floor(x)] != '1')
+    {
+        scene->player.x = x;
+        scene->player.y = y;
+    }
+}
+
+int	ft_hook(t_scene *scene)
+{
+    if (scene->keycode == -1)
+        return (0);
+    else if (scene->keycode == 123)
+        scene->player.angle += ROTATE;
+    else if (scene->keycode == 124)
+        scene->player.angle -= ROTATE;
+    else if (scene->keycode == 126 || scene->keycode == 13)
+        ft_move_player(scene->player.x - STEP * sin(scene->player.angle * PI / 180),
+                       scene->player.y - STEP * cos(scene->player.angle * PI / 180), scene);
+    else if (scene->keycode == 1 || scene->keycode == 125)
+        ft_move_player(scene->player.x + STEP * sin(scene->player.angle * PI / 180),
+                       scene->player.y + STEP * cos(scene->player.angle * PI / 180), scene);
+    else if (scene->keycode == 2)
+        ft_move_player(scene->player.x - STEP * sin((scene->player.angle - 90) * PI / 180),
+                       scene->player.y - STEP * cos((scene->player.angle - 90) * PI / 180), scene);
+    else if (scene->keycode == 0)
+        ft_move_player(scene->player.x + STEP * sin((scene->player.angle - 90) * PI / 180),
+                       scene->player.y + STEP * cos((scene->player.angle - 90) * PI / 180), scene);
+    return (0);
+}
+
 static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
 {
     double     x;
     double      y;
-    double  dist_x;
     double  tan_a;
 
     x = scene->player.x;
@@ -15,24 +46,20 @@ static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
     while (x >= 0 && x < scene->mass_x && y >= 0 && y < scene->mass_y
     && scene->mass[(int)floor(y)][(int)x])
     {
-        //mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
-        //              (int)floor(y * CUBE_SIZE), 0xFFFF00);
-        if (scene->mass[(int)floor(y)][(int)x] != '0')
-        {
-            dist_x = fabs(sqrt(pow(x, 2) + pow(y, 2)));
-            return (dist_x);
-        }
+        mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
+                      (int)floor(y * CUBE_SIZE), 0xFFFF00);
+        if (!scene->mass[(int)floor(y)][(int)x] || scene->mass[(int)floor(y)][(int)x] != '0')
+            return (fabs(sqrt(pow(x, 2) + pow(y, 2))));
         x += x_term;
         y = (scene->player.y + y_term * fabs((x - scene->player.x) / tan_a));
     }
-    return (dist_x);
+    return (scene->mass_x);
 }
 
 static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
 {
     double  x;
     double     y;
-    double  dist_y;
     double  tan_a;
 
     y = scene->player.y;
@@ -42,37 +69,14 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
     x = scene->player.x + ((y - scene->player.y) * tan_a);
     while (x >= 0 && x < scene->mass_x && y >= 0 && y < scene->mass_y)
     {
-        //mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
-        //              (int)floor(y * CUBE_SIZE), 0xFF0000);
-        if (scene->mass[(int)y][(int)floor(x)] != '0')
-        {
-            dist_y = fabs(sqrt(pow(x, 2) + pow(y, 2)));
-            return (dist_y);
-        }
+        mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
+                      (int)floor(y * CUBE_SIZE), 0xFF0000);
+        if (!scene->mass[(int)y][(int)floor(x)] || scene->mass[(int)y][(int)floor(x)] != '0')
+            return (fabs(sqrt(pow(x, 2) + pow(y, 2))));
         y += y_term;
         x = scene->player.x + x_term * fabs((y - scene->player.y) * tan_a);
     }
-    return (dist_y);
-}
-
-static void add_ray(t_scene *scene, double dist, char dir)
-{
-    t_rays	*start;
-    t_rays 	*ray;
-
-    ray = (t_rays *)malloc(sizeof(t_rays));
-    ray->dir = dir;
-    ray->dist = dist;
-    ray->next = NULL;
-    if (!scene->rays)
-        scene->rays = ray;
-    else
-    {
-        start = scene->rays;
-        while (start && start->next)
-            start = start->next;
-        start->next = ray;
-    }
+    return (scene->mass_x);
 }
 
 static void raycast(t_scene *scene, double angle, int x_term, int y_term)
@@ -98,7 +102,7 @@ static void raycast(t_scene *scene, double angle, int x_term, int y_term)
         if (y_term < 0)
             dir = 'N';
     }
-    add_ray(scene, dist, dir);
+    ray_draw(scene, dist, dir);
 }
 
 void ft_raycast(t_scene *scene)
@@ -107,6 +111,7 @@ void ft_raycast(t_scene *scene)
     double angle;
     int curr;
 
+    ft_hook(scene);
     step = ((double)FOV / scene->resolution->x);
     angle = (scene->player.angle - (FOV / 2));
     curr = scene->resolution->x;

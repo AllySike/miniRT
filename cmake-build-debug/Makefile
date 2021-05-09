@@ -223,6 +223,60 @@ mlx/raycast.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/mlx/raycast.c.s
 .PHONY : mlx/raycast.c.s
 
+mlx/raycast_utils.o: mlx/raycast_utils.c.o
+
+.PHONY : mlx/raycast_utils.o
+
+# target to build an object file
+mlx/raycast_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o
+.PHONY : mlx/raycast_utils.c.o
+
+mlx/raycast_utils.i: mlx/raycast_utils.c.i
+
+.PHONY : mlx/raycast_utils.i
+
+# target to preprocess a source file
+mlx/raycast_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/mlx/raycast_utils.c.i
+.PHONY : mlx/raycast_utils.c.i
+
+mlx/raycast_utils.s: mlx/raycast_utils.c.s
+
+.PHONY : mlx/raycast_utils.s
+
+# target to generate assembly for a file
+mlx/raycast_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/mlx/raycast_utils.c.s
+.PHONY : mlx/raycast_utils.c.s
+
+mlx/textures.o: mlx/textures.c.o
+
+.PHONY : mlx/textures.o
+
+# target to build an object file
+mlx/textures.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/mlx/textures.c.o
+.PHONY : mlx/textures.c.o
+
+mlx/textures.i: mlx/textures.c.i
+
+.PHONY : mlx/textures.i
+
+# target to preprocess a source file
+mlx/textures.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/mlx/textures.c.i
+.PHONY : mlx/textures.c.i
+
+mlx/textures.s: mlx/textures.c.s
+
+.PHONY : mlx/textures.s
+
+# target to generate assembly for a file
+mlx/textures.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/untitled1.dir/build.make CMakeFiles/untitled1.dir/mlx/textures.c.s
+.PHONY : mlx/textures.c.s
+
 parse/check_errors_with_file.o: parse/check_errors_with_file.c.o
 
 .PHONY : parse/check_errors_with_file.o
@@ -403,6 +457,12 @@ help:
 	@echo "... mlx/raycast.o"
 	@echo "... mlx/raycast.i"
 	@echo "... mlx/raycast.s"
+	@echo "... mlx/raycast_utils.o"
+	@echo "... mlx/raycast_utils.i"
+	@echo "... mlx/raycast_utils.s"
+	@echo "... mlx/textures.o"
+	@echo "... mlx/textures.i"
+	@echo "... mlx/textures.s"
 	@echo "... parse/check_errors_with_file.o"
 	@echo "... parse/check_errors_with_file.i"
 	@echo "... parse/check_errors_with_file.s"

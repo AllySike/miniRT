@@ -43,6 +43,7 @@ void	init_scene(t_scene **scene)
     (*scene)->player.y = -1;
     (*scene)->player.angle = -1;
     (*scene)->rays = NULL;
+    (*scene)->keycode = -1;
 }
 
 int	line_parser(char *line, t_scene *scene, int fd)

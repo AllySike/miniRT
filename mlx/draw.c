@@ -73,6 +73,16 @@ int	win(t_scene *scene)
 	return (0);
 }
 
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+{
+    char	*dst;
+
+    dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+    if ((unsigned int)color == 0xFF000000)
+        return ;
+    *(unsigned int *)dst = color;
+}
+
 int	ft_close(t_vars *vars)
 {
 	// if (keycode == 53 || keycode == 1L<<5 || keycode == 17)
@@ -84,35 +94,21 @@ int	ft_close(t_vars *vars)
 	exit(0);
 }
 
-void ft_move_player(double x, double y, t_scene *scene)
+int ft_press(int keycode, t_scene *scene)
 {
-    if (scene->mass[(int)floor(y)][(int)floor(x)] != '1')
-    {
-        scene->player.x = x;
-        scene->player.y = y;
-    }
-}
-
-int	ft_hook(int keycode, t_scene *scene) {
     if (keycode == 53)
         ft_close(&(scene->vars));
-    else if (keycode == 123)
-        scene->player.angle += ROTATE;
-    else if (keycode == 124)
-        scene->player.angle -= ROTATE;
-    else if (keycode == 126 || keycode == 13)
-    ft_move_player(scene->player.x - STEP * sin(scene->player.angle * PI / 180),
-                   scene->player.y - STEP * cos(scene->player.angle * PI / 180), scene);
-    else if (keycode == 1 || keycode == 125)
-        ft_move_player(scene->player.x + STEP * sin(scene->player.angle * PI / 180),
-                       scene->player.y + STEP * cos(scene->player.angle * PI / 180), scene);
-    else if (keycode == 2)
-        ft_move_player(scene->player.x - STEP * sin((scene->player.angle - 90) * PI / 180),
-                       scene->player.y - STEP * cos((scene->player.angle - 90) * PI / 180), scene);
-    else if (keycode == 0)
-        ft_move_player(scene->player.x + STEP * sin((scene->player.angle - 90) * PI / 180),
-                       scene->player.y + STEP * cos((scene->player.angle - 90) * PI / 180), scene);
-	return (0);
+    else if (keycode == 123 || keycode == 124 || keycode == 126 || keycode == 13
+        || keycode == 1 || keycode == 125 || keycode == 2 || keycode == 0)
+        scene->keycode = keycode;
+}
+
+int ft_release(int keycode, t_scene *scene)
+{
+    if (keycode == 53)
+        ft_close(&(scene->vars));
+    else
+        scene->keycode = -1;
 }
 
 int	ft_draw(t_scene *scene)
@@ -121,8 +117,8 @@ int	ft_draw(t_scene *scene)
 	scene->vars.win = mlx_new_window(scene->vars.mlx, scene->resolution->x, scene->resolution->y, "cub3d");
 	mlx_loop_hook(scene->vars.mlx, win, scene);
 	mlx_hook(scene->vars.win, 17, 0, ft_close, &(scene->vars));
-    mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);
-    mlx_hook(scene->vars.win, 2, 1L << 0, ft_hook, scene);//сделать движения в draw и зажатие/отжатие клавиш
+    mlx_hook(scene->vars.win, 2, 1L << 0, ft_press, scene);
+    mlx_hook(scene->vars.win, 3, 1L << 1, ft_release, scene);//сделать движения в draw и зажатие/отжатие клавиш
 	mlx_loop(scene->vars.mlx);
 	return (0);
 }

@@ -7,6 +7,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/kgale/Desktop/mycub/main.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/main.c.o"
   "/Users/kgale/Desktop/mycub/mlx/draw.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/mlx/draw.c.o"
   "/Users/kgale/Desktop/mycub/mlx/raycast.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/mlx/raycast.c.o"
+  "/Users/kgale/Desktop/mycub/mlx/raycast_utils.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o"
+  "/Users/kgale/Desktop/mycub/mlx/textures.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/mlx/textures.c.o"
   "/Users/kgale/Desktop/mycub/parse/check_errors_with_file.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.o"
   "/Users/kgale/Desktop/mycub/parse/map_utils.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/parse/map_utils.c.o"
   "/Users/kgale/Desktop/mycub/parse/mass_utils.c" "/Users/kgale/Desktop/mycub/cmake-build-debug/CMakeFiles/untitled1.dir/parse/mass_utils.c.o"
