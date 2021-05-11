@@ -48,54 +48,6 @@ void	pull_texture(t_all *all, t_maping_texture *texture, int h, int h_real)
     }
 }
 
-void	wall_for_screen(t_all *all, t_maping_texture *texture)
-{
-    if ((texture->x_mass + CUBE_SIZE - SIZE_PLAYER
-         <= (int)round(texture->x))
-        && (all->file.map[texture->y_mass / CUBE_SIZE]
-            [(texture->x_mass / CUBE_SIZE) + 1] != '1'))
-        my_mlx_pixel_put(&all->data, all->visual.width, texture->y_tmp,
-                         (int)get_color_image(&all->WE_texture,
-                                              (int)all->WE_texture.color_x, (int)all->WE_texture.color_y));
-    if (texture->y_mass + CUBE_SIZE - SIZE_PLAYER == (int)round(texture->y)
-        && (all->file.map[(texture->y_mass / CUBE_SIZE) + 1]
-            [texture->x_mass / CUBE_SIZE] != '1'))
-        my_mlx_pixel_put(&all->data, all->visual.width, texture->y_tmp,
-                         (int)get_color_image(&all->NO_texture,
-                                              (int)all->NO_texture.color_x, (int)all->NO_texture.color_y));
-    if ((texture->y_mass == (int)round(texture->y))
-        && (all->file.map[(texture->y_mass / CUBE_SIZE) - 1]
-            [texture->x_mass / CUBE_SIZE] != '1'))
-        my_mlx_pixel_put(&all->data, all->visual.width, texture->y_tmp,
-                         (int)get_color_image(&all->SO_texture,
-                                              (int)all->SO_texture.color_x, (int)all->SO_texture.color_y));
-    if ((texture->x_mass == (int)round(texture->x))
-        && (all->file.map[texture->y_mass / CUBE_SIZE]
-            [(texture->x_mass / CUBE_SIZE) - 1] != '1'))
-        my_mlx_pixel_put(&all->data, all->visual.width, texture->y_tmp,
-                         (int)get_color_image(&all->EA_texture,
-                                              (int)all->EA_texture.color_x, (int)all->EA_texture.color_y));
-}
-
-void	draw_flag(t_all *all)
-{
-    int	i;
-
-    i = 0;
-    while (i < all->file.R_y / 2)
-    {
-        my_mlx_pixel_put(&all->data, all->visual.width, i,
-                         create_trgb(0, all->file.C[0], all->file.C[1], all->file.C[2]));
-        i++;
-    }
-    while (i < all->file.R_y)
-    {
-        my_mlx_pixel_put(&all->data, all->visual.width, i,
-                         create_trgb(0, all->file.F[0], all->file.F[1], all->file.F[2]));
-        i++;
-    }
-}
-
 void	pull_texture_utils(t_scene *scene, t_texture *texture)
 {
     if (CUBE_SIZE > scene->north_path.width)

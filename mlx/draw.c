@@ -22,7 +22,7 @@ int	win(t_scene *scene)
 	int x;
 	int y;
 
-	i = 0;
+	/*i = 0;
 	while (i / CUBE_SIZE < scene->mass_y)
 	{
 		j = 0;
@@ -62,7 +62,7 @@ int	win(t_scene *scene)
 			j += CUBE_SIZE;
 		}
 		i += CUBE_SIZE;
-	}
+	}*/
 	ft_raycast(scene);
 //	t_rays *tmp = scene->rays;
 //	while (tmp)

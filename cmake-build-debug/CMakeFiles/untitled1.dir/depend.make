@@ -16,6 +16,16 @@ CMakeFiles/untitled1.dir/mlx/raycast.c.o: ../includes/libft.h
 CMakeFiles/untitled1.dir/mlx/raycast.c.o: ../mlx/raycast.c
 CMakeFiles/untitled1.dir/mlx/raycast.c.o: ../mlx_linux/mlx.h
 
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o: ../includes/cub3d.h
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o: ../includes/libft.h
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o: ../mlx/raycast_utils.c
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o: ../mlx_linux/mlx.h
+
+CMakeFiles/untitled1.dir/mlx/textures.c.o: ../includes/cub3d.h
+CMakeFiles/untitled1.dir/mlx/textures.c.o: ../includes/libft.h
+CMakeFiles/untitled1.dir/mlx/textures.c.o: ../mlx/textures.c
+CMakeFiles/untitled1.dir/mlx/textures.c.o: ../mlx_linux/mlx.h
+
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.o: ../includes/cub3d.h
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.o: ../includes/libft.h
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.o: ../mlx_linux/mlx.h

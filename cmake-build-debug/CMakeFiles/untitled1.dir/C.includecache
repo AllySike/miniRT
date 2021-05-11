@@ -36,41 +36,9 @@ unistd.h
 stdio.h
 -
 
-/Users/kgale/Desktop/mycub/main.c
-includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/mlx/draw.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/mlx/raycast.c
+/Users/kgale/Desktop/mycub/mlx/raycast_utils.c
 ../includes/cub3d.h
 /Users/kgale/Desktop/mycub/includes/cub3d.h
 
 /Users/kgale/Desktop/mycub/mlx_linux/mlx.h
-
-/Users/kgale/Desktop/mycub/parse/check_errors_with_file.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/parse/map_utils.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/parse/mass_utils.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/parse/parser.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/parse/safe_exit.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
-
-/Users/kgale/Desktop/mycub/parse/utils.c
-../includes/cub3d.h
-/Users/kgale/Desktop/mycub/includes/cub3d.h
 

@@ -19,9 +19,9 @@
 # include <math.h>
 # include "../mlx_linux/mlx.h"
 # include "libft.h"
-# define CUBE_SIZE 20
+# define CUBE_SIZE 10
 # define ROTATE 5
-# define STEP 0.2
+# define STEP 2
 # define PI 3.14
 # define FOV 60
 
@@ -86,6 +86,7 @@ typedef struct s_scene
 	int             mass_y;
 	int             keycode;
 	double          *ray_mass;
+	int             ray_count;
 }					t_scene;
 
 typedef struct s_data
@@ -115,7 +116,7 @@ void		map_to_mass(t_scene *scene);
 int			ft_mapsize(t_map *lst);
 void		error_with_map(t_scene *scene);
 void		ft_raycast(t_scene *scene);
-void        ray_draw(t_scene *scene, double dist, char dir);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void ray_draw(t_scene *scene, double dist, char dir, double angle);
 
 #endif

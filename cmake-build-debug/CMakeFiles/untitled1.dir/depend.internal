@@ -16,6 +16,16 @@ CMakeFiles/untitled1.dir/mlx/raycast.c.o
  /Users/kgale/Desktop/mycub/includes/libft.h
  /Users/kgale/Desktop/mycub/mlx/raycast.c
  /Users/kgale/Desktop/mycub/mlx_linux/mlx.h
+CMakeFiles/untitled1.dir/mlx/raycast_utils.c.o
+ /Users/kgale/Desktop/mycub/includes/cub3d.h
+ /Users/kgale/Desktop/mycub/includes/libft.h
+ /Users/kgale/Desktop/mycub/mlx/raycast_utils.c
+ /Users/kgale/Desktop/mycub/mlx_linux/mlx.h
+CMakeFiles/untitled1.dir/mlx/textures.c.o
+ /Users/kgale/Desktop/mycub/includes/cub3d.h
+ /Users/kgale/Desktop/mycub/includes/libft.h
+ /Users/kgale/Desktop/mycub/mlx/textures.c
+ /Users/kgale/Desktop/mycub/mlx_linux/mlx.h
 CMakeFiles/untitled1.dir/parse/check_errors_with_file.c.o
  /Users/kgale/Desktop/mycub/includes/cub3d.h
  /Users/kgale/Desktop/mycub/includes/libft.h
