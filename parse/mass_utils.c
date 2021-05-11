@@ -7,9 +7,9 @@ static void set_player(int x, int y, char c, t_scene *scene)
         scene->player.angle = 0;
     else if (c == 'S')
         scene->player.angle = 180;
-    else if (c != 'W')
+    else if (c == 'W')
         scene->player.angle = 270;
-    else if (c != 'E')
+    else if (c == 'E')
         scene->player.angle = 90;
     scene->player.x = x;
     scene->player.y = y;

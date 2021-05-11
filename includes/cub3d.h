@@ -19,8 +19,8 @@
 # include <math.h>
 # include "../mlx_linux/mlx.h"
 # include "libft.h"
-# define CUBE_SIZE 10
-# define ROTATE 5
+# define CUBE_SIZE 3
+# define ROTATE 10
 # define STEP 2
 # define PI 3.14
 # define FOV 60
@@ -81,11 +81,9 @@ typedef struct s_scene
 	char			**mass;
 	t_vars			vars;
 	t_player		player;
-	t_rays			*rays;
 	int             mass_x;
 	int             mass_y;
 	int             keycode;
-	double          *ray_mass;
 	int             ray_count;
 }					t_scene;
 
@@ -98,12 +96,14 @@ typedef struct s_data
     int				endian;
 }					t_data;
 
-void		check_errors_with_file(int argc, char *argv[], int *fd);
+int		    check_errors_with_file(int argc, char *argv[], int *fd);
+int         ft_check_path_to_texture(char *path, char **split, char *line);
+void        safe_exit(int fd, char **split, char *line, t_scene *scene);
+
 void		handle_res_tex_col(char *line, t_scene *scene, int fd);
 void		handle_texture(char *line, t_scene *scene, int fd);
 void		handle_map(char *line, t_scene *scene, int fd);
 void		ft_exit(int fd, char **split, char *line);
-int			ft_check_path_to_texture(char *path, char **split, char *line);
 void		free_split(char **split);
 int			create_trgb(int t, int r, int g, int b);
 int			ft_draw(t_scene *scene);

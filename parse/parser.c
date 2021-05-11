@@ -25,7 +25,22 @@ void	free_split(char **split)
 	//free(split);
 }
 
-void	init_scene(t_scene **scene)
+static void init_helpers(t_scene **scene)
+{
+    (*scene)->player.x = -1;
+    (*scene)->player.y = -1;
+    (*scene)->player.angle = -1;
+    (*scene)->keycode = -1;
+    (*scene)->mass = NULL;
+    (*scene)->mass_x = -1;
+    (*scene)->mass_y = -1;
+    (*scene)->mass = NULL;
+    (*scene)->vars.win = NULL;
+    (*scene)->vars.mlx = NULL;
+    (*scene)->ray_count = -1;
+}
+
+static void	init_scene(t_scene **scene)
 {
 	*scene = (t_scene *)malloc(sizeof(t_scene));
 	(*scene)->ceiling = -1;
@@ -39,11 +54,7 @@ void	init_scene(t_scene **scene)
 	(*scene)->resolution = (t_resolution *)malloc(sizeof(t_resolution));
 	(*scene)->resolution->x = -1;
 	(*scene)->resolution->y = -1;
-    (*scene)->player.x = -1;
-    (*scene)->player.y = -1;
-    (*scene)->player.angle = -1;
-    (*scene)->rays = NULL;
-    (*scene)->keycode = -1;
+    init_helpers(scene);
 }
 
 int	line_parser(char *line, t_scene *scene, int fd)
@@ -82,10 +93,18 @@ t_scene	*parser(int fd)
 	scene = NULL;
 	init_scene(&scene);
 	gnl = get_next_line((const int)fd, &line);
+	if (gnl <= 0)
+    {
+        close(fd);
+	    free(line);
+        free_scene(scene);
+        write(STDERR_FILENO, "Error\nInvalid map\n", 18);
+        exit(-1);
+    }
 	while (gnl > 0)
 	{
 		line_parser(line, scene, fd);
-		//free(line);
+//		free(line);
 		gnl = get_next_line((const int)fd, &line);
 	}
 	//check_not_null(scene, line);

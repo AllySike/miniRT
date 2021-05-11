@@ -2,7 +2,7 @@
 
 void ft_move_player(double x, double y, t_scene *scene)
 {
-    if (scene->mass[(int)floor(y)][(int)floor(x)] && scene->mass[(int)floor(y)][(int)floor(x)] != '1')
+    if (scene->mass[(int)floor(y)] && scene->mass[(int)floor(y)][(int)floor(x)] && scene->mass[(int)floor(y)][(int)floor(x)] != '1')
     {
         scene->player.x = x;
         scene->player.y = y;
@@ -14,21 +14,21 @@ int	ft_hook(t_scene *scene)
     if (scene->keycode == -1)
         return (0);
     else if (scene->keycode == 123)
-        scene->player.angle += ROTATE;
-    else if (scene->keycode == 124)
         scene->player.angle -= ROTATE;
+    else if (scene->keycode == 124)
+        scene->player.angle += ROTATE;
     else if (scene->keycode == 126 || scene->keycode == 13)
-        ft_move_player(scene->player.x - STEP * sin(scene->player.angle * PI / 180),
-                       scene->player.y - STEP * cos(scene->player.angle * PI / 180), scene);
-    else if (scene->keycode == 1 || scene->keycode == 125)
         ft_move_player(scene->player.x + STEP * sin(scene->player.angle * PI / 180),
                        scene->player.y + STEP * cos(scene->player.angle * PI / 180), scene);
+    else if (scene->keycode == 1 || scene->keycode == 125)
+        ft_move_player(scene->player.x - STEP * sin(scene->player.angle * PI / 180),
+                       scene->player.y - STEP * cos(scene->player.angle * PI / 180), scene);
     else if (scene->keycode == 2)
-        ft_move_player(scene->player.x - STEP * sin((scene->player.angle - 90) * PI / 180),
-                       scene->player.y - STEP * cos((scene->player.angle - 90) * PI / 180), scene);
-    else if (scene->keycode == 0)
         ft_move_player(scene->player.x + STEP * sin((scene->player.angle - 90) * PI / 180),
                        scene->player.y + STEP * cos((scene->player.angle - 90) * PI / 180), scene);
+    else if (scene->keycode == 0)
+        ft_move_player(scene->player.x - STEP * sin((scene->player.angle - 90) * PI / 180),
+                       scene->player.y - STEP * cos((scene->player.angle - 90) * PI / 180), scene);
     return (0);
 }
 
@@ -38,16 +38,16 @@ static double    raycast_x(t_scene *scene, double angle, int x_term, int y_term)
     double      y;
     double  tan_a;
 
-    x = scene->player.x;
+    x = scene->player.x * CUBE_SIZE;
     tan_a = tan(angle * PI / 180);
 //    mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(scene->player.x * CUBE_SIZE),
 //                  (int)floor(scene->player.y * CUBE_SIZE), 0xFFFF00);
-    y = scene->player.y + y_term * ((x - scene->player.x) / tan_a);
-    while (x >= 0 && x < scene->mass_x && y >= 0 && y < scene->mass_y
-    && scene->mass[(int)floor(y)][(int)x])
+    y = (scene->player.y * CUBE_SIZE + y_term * ((x - scene->player.x) / tan_a));
+    while (x / CUBE_SIZE >= 0 && x / CUBE_SIZE < scene->mass_x && y / CUBE_SIZE >= 0 && y / CUBE_SIZE < scene->mass_y
+    && scene->mass[(int)floor(y / CUBE_SIZE)][(int)floor(x / CUBE_SIZE)])
     {
-        if (scene->mass[(int)floor(y)][(int)x] != '0')
-            return (fabs(sqrt(pow(x - scene->player.x, 2) + pow(y - scene->player.y, 2))));
+        if (scene->mass[(int)floor(y / CUBE_SIZE)][(int)floor(x / CUBE_SIZE)] != '0')
+            return (fabs(sqrt(pow(x / CUBE_SIZE - scene->player.x, 2) + pow(y / CUBE_SIZE - scene->player.y, 2))));
 //        mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
 //                      (int)floor(y * CUBE_SIZE), 0xFFFF00);
         x += x_term;
@@ -62,16 +62,16 @@ static double    raycast_y(t_scene *scene, double angle, int x_term, int y_term)
     double     y;
     double  tan_a;
 
-    y = scene->player.y;
+    y = scene->player.y * CUBE_SIZE;
     tan_a = tan(angle * PI / 180);
 //    mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(scene->player.x * CUBE_SIZE),
 //                  (int)floor(scene->player.y * CUBE_SIZE), 0xFF0000);
-    x = scene->player.x + ((y - scene->player.y) * tan_a);
-    while (x >= 0 && x < scene->mass_x && y >= 0 && y < scene->mass_y
-    && scene->mass[(int)y][(int)floor(x)])
+    x = scene->player.x * CUBE_SIZE + ((y - scene->player.y) * tan_a);
+    while (x / CUBE_SIZE >= 0 && x / CUBE_SIZE < scene->mass_x && y / CUBE_SIZE >= 0 && y / CUBE_SIZE < scene->mass_y
+    && scene->mass[(int)floor(y / CUBE_SIZE)][(int)floor(x / CUBE_SIZE)])
     {
-        if (scene->mass[(int)y][(int)floor(x)] != '0')
-            return (fabs(sqrt(pow(x - scene->player.x, 2) + pow(y - scene->player.y, 2))));
+        if (scene->mass[(int)floor(y / CUBE_SIZE)][(int)floor(x / CUBE_SIZE)] != '0')
+            return (fabs(sqrt(pow(x / CUBE_SIZE - scene->player.x, 2) + pow(y / CUBE_SIZE - scene->player.y, 2))));
 //        mlx_pixel_put(scene->vars.mlx, scene->vars.win, (int)floor(x * CUBE_SIZE),
 //                      (int)floor(y * CUBE_SIZE), 0xFF0000);
         y += y_term;

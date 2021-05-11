@@ -36,7 +36,7 @@ unistd.h
 stdio.h
 -
 
-/Users/kgale/Desktop/mycub/mlx/raycast_utils.c
+/Users/kgale/Desktop/mycub/mlx/raycast.c
 ../includes/cub3d.h
 /Users/kgale/Desktop/mycub/includes/cub3d.h
 
